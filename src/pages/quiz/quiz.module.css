@@ -1,0 +1,33 @@
+.quiz {
+  padding: 80px 0px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.quiz__container {
+  width: 400px;
+  margin: 0px 15px;
+}
+
+.quiz button {
+  margin-top: 20px;
+}
+
+/* .quiz a {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+} */
+
+@media (max-width: 454px) {
+  .quiz__container {
+    width: 300px;
+  }
+
+  .quiz__container h1 {
+    font-size: 20px;
+  }
+}

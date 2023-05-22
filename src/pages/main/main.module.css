@@ -1,0 +1,28 @@
+.main {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 15px;
+  width: 100%;
+}
+
+.main__text {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 44px;
+
+  color: rgba(124, 120, 119, 0.5);
+}
+
+.main__quiz {
+  width: 400px;
+}
+
+.main__your_activities {
+  padding-top: 40px;
+}
+
+@media (max-width: 1064px) {
+  .main__quiz {
+    width: 100%;
+  }
+}
