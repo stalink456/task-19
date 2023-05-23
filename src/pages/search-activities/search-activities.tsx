@@ -12,7 +12,11 @@ export const SearchActivities: React.FC = () => {
 
   return (
     <Page>
-      <Space direction='vertical' size={16}>
+      <Space
+        direction='vertical'
+        size={16}
+        className={styles.search_activities}
+      >
         <BackButton />
         <Typography.Text
           type='secondary'
