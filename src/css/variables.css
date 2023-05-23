@@ -1,7 +1,4 @@
 :root {
-  --logo-color: #ef3124;
-  --black-color: #000;
-  --white-color: #fff;
-  --grey-color: rgb(0 0 0 / 15%);
-  --border-color: #0000;
+  --font-color: rgba(124, 120, 119, 0.5);
+  --shadow-params: -6px 6px 20px rgba(0, 0, 0, 0.1);
 }

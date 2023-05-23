@@ -1,0 +1,13 @@
+.activities__quiz {
+  width: 400px;
+}
+
+.activities__quiz button {
+  margin-top: 20px;
+}
+
+@media (max-width: 1064px) {
+  .activities__quiz {
+    width: 100%;
+  }
+}

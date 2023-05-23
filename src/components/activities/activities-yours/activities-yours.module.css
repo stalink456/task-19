@@ -1,0 +1,13 @@
+@import '../../../css/variables.css';
+
+.activities__yours {
+  padding-top: 40px;
+}
+
+.activities__yours__text {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 44px;
+
+  color: var(--font-color);
+}

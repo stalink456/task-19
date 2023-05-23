@@ -1,0 +1,13 @@
+@import '../../css/variables.css';
+
+.search_activities__text {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 44px;
+
+  color: var(--font-color);
+}
+
+.search_activities__search_button {
+  width: 700px;
+}

@@ -1,3 +1,5 @@
+@import '../../css/variables.css';
+
 .quiz {
   padding: 80px 0px;
   height: 100vh;
@@ -8,26 +10,30 @@
 }
 
 .quiz__container {
-  width: 400px;
+  width: 600px;
   margin: 0px 15px;
+  padding: 40px;
+  box-shadow: var(--shadow-params);
 }
 
-.quiz button {
+.quiz__container__submit_button {
   margin-top: 20px;
 }
 
-/* .quiz a {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-} */
-
-@media (max-width: 454px) {
+@media (max-width: 630px) {
   .quiz__container {
-    width: 300px;
+    width: 500px;
   }
 
   .quiz__container h1 {
     font-size: 20px;
+  }
+}
+
+@media (max-width: 530px) {
+  .quiz__container {
+    padding: 0px;
+    box-shadow: none;
+    width: 300px;
   }
 }

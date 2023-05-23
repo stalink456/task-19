@@ -1,0 +1,13 @@
+@import '../../../css/variables.css';
+
+.activities__recomended {
+  margin-bottom: 40px;
+}
+
+.activities__recomended__text {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 44px;
+
+  color: var(--font-color);
+}
