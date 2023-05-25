@@ -1,6 +1,6 @@
-# webpack_default_config
+# task-19 LCT
 
-Дефолтная настройка webpack для TS/Redux-toolkit + Saga/CSS-modules/ESLint/Jest + RTL/etc.
+Фронт для задачи №19 
 
 # dev:
 
