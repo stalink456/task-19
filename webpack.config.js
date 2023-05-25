@@ -3,7 +3,8 @@ const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 const ESLintPlugin = require('eslint-webpack-plugin');
-const Dotenv = require('dotenv-webpack');
+const webpack = require('webpack');
+require('dotenv').config({ path: './.env' });
 
 const mode =
   process.env.NODE_ENV === 'production' ? 'production' : 'development';
@@ -25,8 +26,8 @@ module.exports = {
     new ESLintPlugin({
       extensions: ['js', 'jsx', 'ts', 'tsx'],
     }),
-    new Dotenv({
-      systemvars: true,
+    new webpack.DefinePlugin({
+      'process.env': JSON.stringify(process.env),
     }),
   ],
   devServer: {
