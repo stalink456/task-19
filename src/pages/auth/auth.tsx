@@ -5,7 +5,7 @@ import { useAuth } from 'hooks/use-auth';
 import styles from './auth.module.css';
 
 export const Auth: React.FC = () => {
-  const { onFinish } = useAuth();
+  const { authFIO, authDate, authAddress, authIsLoading, onFinish } = useAuth();
 
   return (
     <div className={styles.auth}>
@@ -18,10 +18,13 @@ export const Auth: React.FC = () => {
       >
         <Form.Item
           label='ФИО'
-          name='name'
+          name='fio'
           rules={[{ required: true, message: 'Введите Ваше ФИО' }]}
         >
-          <Input placeholder='Иван Иванович Иванов' />
+          <Input
+            placeholder='Иван Иванович Иванов'
+            value={authFIO === null ? '' : authFIO}
+          />
         </Form.Item>
 
         <Form.Item
@@ -29,11 +32,17 @@ export const Auth: React.FC = () => {
           name='date'
           rules={[{ required: true, message: 'Укажите дату рождения!' }]}
         >
-          <Input placeholder='20.05.1996' />
+          <Input
+            placeholder='20.05.1996'
+            value={authDate === null ? '' : authDate}
+          />
         </Form.Item>
 
         <Form.Item label='Адрес' name='adress'>
-          <Input placeholder='Москва, ул. Петровых, д.8, 8к1' />
+          <Input
+            placeholder='Москва, ул. Петровых, д.8, 8к1'
+            value={authAddress === null ? '' : authAddress}
+          />
         </Form.Item>
 
         <Form.Item
@@ -48,7 +57,7 @@ export const Auth: React.FC = () => {
         </Form.Item>
 
         <Form.Item className={styles.auth__form__button}>
-          <Button type='primary' htmlType='submit'>
+          <Button type='primary' htmlType='submit' loading={authIsLoading}>
             Авторизоваться
           </Button>
         </Form.Item>
