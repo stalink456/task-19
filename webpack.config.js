@@ -4,7 +4,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 const ESLintPlugin = require('eslint-webpack-plugin');
 const webpack = require('webpack');
-require('dotenv').config({ path: './.env' });
+require('dotenv').config({ path: '.env' });
 
 const mode =
   process.env.NODE_ENV === 'production' ? 'production' : 'development';
