@@ -10,7 +10,7 @@ import styles from './main.module.css';
 export const Main: React.FC = () => {
   return (
     <Page>
-      <Space direction='horizontal' className={styles.main} wrap>
+      <Space direction='vertical' className={styles.main}>
         <ActivitiesRecomended />
         <ActivitiesQuiz />
         <ActivitiesYours />

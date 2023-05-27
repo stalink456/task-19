@@ -2,7 +2,6 @@ export type AuthTypeInitialStateType = {
   uuid: string | null;
   fio: string | null;
   date: string | null;
-  address?: string | null;
   sex: string | null;
   isLoading: boolean;
 };

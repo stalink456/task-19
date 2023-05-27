@@ -11,3 +11,11 @@
 
   color: var(--font-color);
 }
+
+.activities__recomended__container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  align-items: stretch;
+}

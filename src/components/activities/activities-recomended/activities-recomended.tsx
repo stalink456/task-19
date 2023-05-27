@@ -1,28 +1,38 @@
 import React from 'react';
-import { Space, Typography } from 'antd';
-import { Link } from 'react-router-dom';
+import { Typography } from 'antd';
+import { RecomendedCardActivities } from 'components/recomended-card-activities';
+import { useActivitiesRecomended } from 'hooks/use-activities-recomended';
 
 import styles from './activities-recomended.module.css';
+import { Loading } from 'components/ui-components/loading';
 
-export const ActivitiesRecomended: React.FC = React.memo(() => {
+export const ActivitiesRecomended: React.FC = () => {
+  const { recomendedActivities, isLoading } = useActivitiesRecomended();
+
+  if (isLoading) {
+    return <Loading />;
+  }
+
   return (
     <React.Fragment>
-      <Space
-        direction='vertical'
-        size={16}
-        className={styles.activities__recomended}
-      >
+      <div className={styles.activities__recomended}>
         <Typography.Text
           type='secondary'
           className={styles.activities__recomended__text}
         >
           Рекомендуемые направления
         </Typography.Text>
-        <Link to='/search-activities'>Items</Link>
-        <Link to='/search-activities'>Items</Link>
-        <Link to='/search-activities'>Items</Link>
-        <Link to='/search-activities'>Items</Link>
-      </Space>
+
+        <div className={styles.activities__recomended__container}>
+          {recomendedActivities.map(({ activities, typeGroup }, index) => (
+            <RecomendedCardActivities
+              key={index}
+              activities={activities}
+              typeGroup={typeGroup}
+            />
+          ))}
+        </div>
+      </div>
     </React.Fragment>
   );
-});
+};

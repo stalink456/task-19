@@ -5,7 +5,7 @@ import { useAuth } from 'hooks/use-auth';
 import styles from './auth.module.css';
 
 export const Auth: React.FC = () => {
-  const { authFIO, authDate, authAddress, authIsLoading, onFinish } = useAuth();
+  const { authFIO, authDate, authIsLoading, onFinish } = useAuth();
 
   return (
     <div className={styles.auth}>
@@ -35,13 +35,6 @@ export const Auth: React.FC = () => {
           <Input
             placeholder='20.05.1996'
             value={authDate === null ? '' : authDate}
-          />
-        </Form.Item>
-
-        <Form.Item label='Адрес' name='adress'>
-          <Input
-            placeholder='Москва, ул. Петровых, д.8, 8к1'
-            value={authAddress === null ? '' : authAddress}
           />
         </Form.Item>
 

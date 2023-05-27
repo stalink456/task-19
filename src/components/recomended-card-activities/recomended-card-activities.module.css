@@ -1,0 +1,30 @@
+@import '../../css/variables.css';
+
+.recomended_card_activities {
+  flex: 1 1 31%;
+  padding: 20px;
+  box-shadow: var(--shadow-params);
+  border-radius: 15px;
+  align-self: stretch;
+}
+
+.recomended_card_activities:not(:last-child) {
+  margin-right: 20px;
+}
+
+@media (max-width: 1065px) {
+  .recomended_card_activities {
+    flex: 1 1 100%;
+    margin-right: 0px;
+    margin-bottom: 20px;
+  }
+
+  .recomended_card_activities:not(:last-child) {
+    margin-right: 0px;
+  }
+
+  .recomended_card_activities__description {
+    display: flex;
+    flex-direction: column;
+  }
+}

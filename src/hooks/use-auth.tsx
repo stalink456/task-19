@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import { useAppSelector } from 'store';
 import {
   authActions,
-  authAddressSelector,
   authDateSelector,
   authFIOSelector,
   authIsLoadingSelector,
@@ -18,7 +17,6 @@ export const useAuth = () => {
   const authUUID = useAppSelector(authUUIDSelector);
   const authFIO = useAppSelector(authFIOSelector);
   const authDate = useAppSelector(authDateSelector);
-  const authAddress = useAppSelector(authAddressSelector);
   const authSex = useAppSelector(authSexSelector);
   const authIsLoading = useAppSelector(authIsLoadingSelector);
   const navigate = useNavigate();
@@ -37,7 +35,6 @@ export const useAuth = () => {
     authUUID,
     authFIO,
     authDate,
-    authAddress,
     authSex,
     authIsLoading,
 

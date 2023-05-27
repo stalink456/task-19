@@ -12,12 +12,80 @@
   color: var(--font-color);
 }
 
-.search_activities__search_button {
-  width: 700px;
+.search_activities__search_panel {
+  display: flex;
+  flex-direction: row;
 }
 
-@media (width <= 1065px) {
-  .search_activities__search_button {
-    width: 100%;
+.search_activities__search_panel__button {
+  width: 700px;
+  margin-right: 20px;
+}
+
+.search_activities__search_panel > button {
+  width: 100px;
+}
+
+.search_activities__first_group {
+  display: flex;
+}
+
+@media (max-width: 1065px) {
+  .search_activities__first_group {
+    flex-direction: column;
   }
+
+  .search_activities__first_group__district {
+    width: 500px;
+  }
+}
+
+.search_activities__first_group__district {
+  width: 400px;
+  margin-right: 20px;
+}
+
+.search_activities__first_group__days {
+  width: 150px;
+  margin-right: 20px;
+}
+
+.search_activities__first__group__online {
+  width: 150px;
+  margin-right: 20px;
+}
+
+.search_activities__first__group__d0LevelName {
+  width: 150px;
+  margin-right: 20px;
+}
+
+.search_activities__second__group {
+  display: flex;
+}
+
+.search_activities__second__group__d1LevelName {
+  width: 550px;
+  margin-right: 20px;
+}
+
+.search_activities__second__group__d2LevelName {
+  width: 400px;
+}
+
+.search_activities__third__group {
+  display: flex;
+}
+
+.search_activities__third__group__certificate {
+  width: 150px;
+  margin-right: 20px;
+}
+
+.search_activities__third__group__area {
+  width: 350px;
+  margin-right: 20px;
+}
+
+@media (max-width: 1085px) {
 }

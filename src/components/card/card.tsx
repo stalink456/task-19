@@ -1,17 +1,19 @@
 import React from 'react';
 import { Button, Space, Typography } from 'antd';
-import { CloseOutlined } from '@ant-design/icons';
+import { ActivitiesType } from 'store/activities-search/types';
 
 import styles from './card.module.css';
 
-export const Card: React.FC = React.memo(() => {
-  const [array, setArray] = React.useState<string[]>(
-    new Array(20).fill('Фильтр')
-  );
-
-  const handleFilter = () => {
-    setArray((previousArr) => previousArr.slice(0, -1));
-  };
+export const Card: React.FC<ActivitiesType> = (props) => {
+  const {
+    address,
+    area,
+    d1LevelName,
+    d2LevelName,
+    district,
+    groupId,
+    scheduleClosed,
+  } = props;
 
   return (
     <div className={styles.card}>
@@ -23,35 +25,24 @@ export const Card: React.FC = React.memo(() => {
             style={{ margin: 0 }}
             className={styles.card__category_text}
           >
-            КАТЕГОРИЯ
+            {d1LevelName}
           </Typography.Title>
           <Typography.Text
             type='secondary'
             className={styles.card__activity_text}
           >
-            Активность
+            {d2LevelName}
+          </Typography.Text>
+          <Typography.Text type='secondary'>
+            Адрес: {address}, {area}, {district}
+          </Typography.Text>
+          <Typography.Text type='secondary'>Группа: {groupId}</Typography.Text>
+          <Typography.Text type='secondary'>
+            Время работы: {scheduleClosed}
           </Typography.Text>
         </Space>
-        <Space direction='horizontal' size={5} wrap>
-          {array.map((value, index) => (
-            <Button
-              key={index}
-              type='default'
-              icon={<CloseOutlined />}
-              onClick={handleFilter}
-            >
-              {`${value} ${index}`}
-            </Button>
-          ))}
-        </Space>
-        <Typography.Text>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat.
-        </Typography.Text>
         <Button type='primary'>Записаться!</Button>
       </Space>
     </div>
   );
-});
+};
