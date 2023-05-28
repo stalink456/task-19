@@ -18,6 +18,13 @@ const SearchActivities = React.lazy(
     )
 );
 
+const RecomendedActivities = React.lazy(
+  () =>
+    import(
+      /* webpackChunkName: "RecomendedActivities" */ '../../pages/recomended-activities'
+    )
+);
+
 export const Routing: React.FC = () => {
   return (
     <React.Fragment>
@@ -37,6 +44,14 @@ export const Routing: React.FC = () => {
             element={
               <Suspense fallback={<Loading />}>
                 <Survey />
+              </Suspense>
+            }
+          />
+          <Route
+            path='/recomended-activities'
+            element={
+              <Suspense fallback={<Loading />}>
+                <RecomendedActivities />
               </Suspense>
             }
           />

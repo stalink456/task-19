@@ -1,10 +1,14 @@
 .survey_result__container {
   width: 600px;
-  height: 560px;
+  height: 100%;
   margin: 0px 15px;
   padding: 40px;
   box-shadow: var(--shadow-params);
   border-radius: 15px;
+}
+
+.survey_result__container > div {
+  flex: 1;
 }
 
 .survey_result__container__title {

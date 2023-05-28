@@ -29,6 +29,6 @@ function* searchActivitiesSaga(
   }
 }
 
-export function* watchGetsearchActivitiesSagaSaga() {
+export function* watchGetSearchActivitiesSaga() {
   yield takeLatest(searchActivitiesActions.request.type, searchActivitiesSaga);
 }

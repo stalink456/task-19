@@ -1,0 +1,13 @@
+@import '../../css/variables.css';
+
+.recomended_activities__cards {
+  margin-top: 30px;
+}
+
+.recomended_activities__text {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 44px;
+
+  color: var(--font-color);
+}

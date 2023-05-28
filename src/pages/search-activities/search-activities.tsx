@@ -161,7 +161,7 @@ export const SearchActivities: React.FC = () => {
               name='online'
               className={styles.search_activities__first__group__online}
             >
-              <Select placeholder='Онлайн/Оффлайн' options={online} />
+              <Select placeholder='Онлайн' options={online} />
             </Form.Item>
 
             <Form.Item>

@@ -5,7 +5,6 @@ import { useSurvey } from 'hooks/use-survey';
 
 import styles from './survey-card.module.css';
 
-// добавить обработчик для инпута и сам инпут
 export const SurveyCard: React.FC = () => {
   const {
     answersUser,

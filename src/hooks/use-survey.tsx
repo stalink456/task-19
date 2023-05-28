@@ -52,12 +52,6 @@ export const useSurvey = () => {
   };
 
   const handleQuestionSurvey = () => {
-    // Если текущий вопрос+ 1 равен кол-ву вопросов, то пушим на хост ответы
-    // if (currentQuestion + 1 === surveyLength) {
-    //   console.log('Диспатчим');
-    // } else {
-    //   dispatch(surveyActions.addItems(answersUser));
-    // }
     dispatch(surveyActions.addItems(answersUser));
     setAnswersUser(null);
   };

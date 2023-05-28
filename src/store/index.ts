@@ -11,6 +11,7 @@ import { surveyReducer } from './survey/slice';
 import { availableDatesReducer } from './avalibale-dates';
 import { userActivitiesReducer } from './user-activities';
 import { userActivitiesItemsReducer } from './user-activities-items';
+import { personalActivitiesReducer } from './personal-activities';
 
 const sagaMiddleware = createSagaMiddleware();
 const middlewares = [sagaMiddleware];
@@ -26,6 +27,7 @@ export const store = configureStore({
     availableDates: availableDatesReducer,
     userActivities: userActivitiesReducer,
     userActivitiesItems: userActivitiesItemsReducer,
+    personalActivities: personalActivitiesReducer,
   },
   devTools: true,
   middleware: middlewares,

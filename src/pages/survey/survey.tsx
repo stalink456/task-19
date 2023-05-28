@@ -1,6 +1,4 @@
 import React from 'react';
-// import { useSurvey } from 'hooks/use-survey';
-
 import styles from './survey.module.css';
 import { useAppDispatch, useAppSelector } from 'store';
 import {

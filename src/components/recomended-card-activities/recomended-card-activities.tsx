@@ -10,7 +10,7 @@ export const RecomendedCardActivities: React.FC<RecomendedActivity> =
     return (
       <div className={styles.recomended_card_activities}>
         <Typography.Title level={3}>{typeGroup}</Typography.Title>
-        {activities.map(({ title }, index) => (
+        {activities.map(({ title, d3LevelId }, index) => (
           <div
             key={index}
             className={styles.recomended_card_activities__description}
@@ -18,7 +18,10 @@ export const RecomendedCardActivities: React.FC<RecomendedActivity> =
             <Typography.Text
               className={styles.recomended_card_activities__description_text}
             >
-              <Link to='/search-activities' style={{ marginBottom: '20px' }}>
+              <Link
+                to={`/recomended-activities?d3LevelId=${d3LevelId}`}
+                style={{ marginBottom: '20px' }}
+              >
                 {title}
               </Link>
             </Typography.Text>

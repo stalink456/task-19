@@ -14,6 +14,7 @@ export const SurveyResult: React.FC = () => {
         Спасибо, что ответили на наши вопросы, теперь рекомендации будут более
         точными
       </Typography.Title>
+
       <Link to='/main'>
         <Button>Перейти на главную страницу</Button>
       </Link>
