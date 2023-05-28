@@ -22,7 +22,7 @@ export const Auth: React.FC = () => {
           rules={[{ required: true, message: 'Введите Ваше ФИО' }]}
         >
           <Input
-            placeholder='Иван Иванович Иванов'
+            placeholder='Иванов Иван Иванович'
             value={authFIO === null ? '' : authFIO}
           />
         </Form.Item>
