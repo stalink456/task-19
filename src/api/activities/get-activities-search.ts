@@ -13,9 +13,9 @@ export const getActivitiesSearch = async (
   const {
     area,
     certificate,
-    d0LevelName,
-    d1LevelName,
-    d2LevelName,
+    d0LevelId,
+    d1LevelId,
+    d2LevelId,
     days,
     district,
     online,
@@ -24,9 +24,9 @@ export const getActivitiesSearch = async (
 
   const reqArea = isEmptyValue(area);
   const reqCertificate = isEmptyValue(certificate);
-  const reqD0LevelName = isEmptyValue(d0LevelName);
-  const reqD1LevelName = isEmptyValue(d1LevelName);
-  const reqD2LevelName = isEmptyValue(d2LevelName);
+  const reqD0LevelId = isEmptyValue(d0LevelId);
+  const reqD1LevelId = isEmptyValue(d1LevelId);
+  const reqD2LevelId = isEmptyValue(d2LevelId);
   const reqDays = isEmptyValue(days);
   const reqDistrict = isEmptyValue(district);
   const reqOnline = isEmptyValue(online);
@@ -35,16 +35,15 @@ export const getActivitiesSearch = async (
   const link = generateLink(
     reqArea,
     reqCertificate,
-    reqD0LevelName,
-    reqD1LevelName,
-    reqD2LevelName,
+    reqD0LevelId,
+    reqD1LevelId,
+    reqD2LevelId,
     reqDays,
     reqDistrict,
     reqOnline,
     reqQuery
   );
 
-  console.log(link);
   const { data } = await HttpClient.call(
     Method.Post,
     `${process.env.REACT_APP_BASE_URL}/search?${link}`

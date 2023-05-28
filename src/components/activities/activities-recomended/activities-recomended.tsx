@@ -2,9 +2,9 @@ import React from 'react';
 import { Typography } from 'antd';
 import { RecomendedCardActivities } from 'components/recomended-card-activities';
 import { useActivitiesRecomended } from 'hooks/use-activities-recomended';
+import { Loading } from 'components/ui-components/loading';
 
 import styles from './activities-recomended.module.css';
-import { Loading } from 'components/ui-components/loading';
 
 export const ActivitiesRecomended: React.FC = () => {
   const { recomendedActivities, isLoading } = useActivitiesRecomended();
@@ -20,7 +20,7 @@ export const ActivitiesRecomended: React.FC = () => {
           type='secondary'
           className={styles.activities__recomended__text}
         >
-          Рекомендуемые направления
+          {recomendedActivities.length ? 'Рекомендуемые направления' : null}
         </Typography.Text>
 
         <div className={styles.activities__recomended__container}>

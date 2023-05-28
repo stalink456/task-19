@@ -7,8 +7,8 @@ const Main = React.lazy(
   () => import(/* webpackChunkName: "MainPage" */ '../../pages/main')
 );
 
-const Quiz = React.lazy(
-  () => import(/* webpackChunkName: "Quiz" */ '../../pages/quiz')
+const Survey = React.lazy(
+  () => import(/* webpackChunkName: "Survey" */ '../../pages/survey')
 );
 
 const SearchActivities = React.lazy(
@@ -33,10 +33,10 @@ export const Routing: React.FC = () => {
             }
           />
           <Route
-            path='/quiz'
+            path='/survey'
             element={
               <Suspense fallback={<Loading />}>
-                <Quiz />
+                <Survey />
               </Suspense>
             }
           />

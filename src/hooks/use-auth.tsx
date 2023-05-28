@@ -7,14 +7,14 @@ import {
   authFIOSelector,
   authIsLoadingSelector,
   authSexSelector,
-  authUUIDSelector,
+  authUserIdSelector,
 } from 'store/auth';
 import { useAppDispatch } from 'store';
 import { UserData } from 'store/auth/types';
 
 export const useAuth = () => {
   const dispatch = useAppDispatch();
-  const authUUID = useAppSelector(authUUIDSelector);
+  const userId = useAppSelector(authUserIdSelector);
   const authFIO = useAppSelector(authFIOSelector);
   const authDate = useAppSelector(authDateSelector);
   const authSex = useAppSelector(authSexSelector);
@@ -22,17 +22,17 @@ export const useAuth = () => {
   const navigate = useNavigate();
 
   React.useEffect(() => {
-    if (authUUID) {
+    if (userId) {
       navigate('/main');
     }
-  }, [authUUID]);
+  }, [userId]);
 
   const onFinish = (values: UserData) => {
     dispatch(authActions.request(values));
   };
 
   return {
-    authUUID,
+    userId,
     authFIO,
     authDate,
     authSex,

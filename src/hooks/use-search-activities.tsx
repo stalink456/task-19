@@ -11,9 +11,9 @@ import {
   filterOptionsActions,
   filterOptionsAreaSelector,
   filterOptionsCertificateSelector,
-  filterOptionsD0LevelNameSelector,
-  filterOptionsD1LevelNameSelector,
-  filterOptionsD2LevelNameSelector,
+  filterOptionsD0LevelIdSelector,
+  filterOptionsD1LevelIdSelector,
+  filterOptionsD2LevelIdSelector,
   filterOptionsDaysSelector,
   filterOptionsDistrictSelector,
   filterOptionsIsLoadingSelector,
@@ -26,9 +26,9 @@ export const useSearchActivities = () => {
   const district = useAppSelector(filterOptionsDistrictSelector);
   const days = useAppSelector(filterOptionsDaysSelector);
   const online = useAppSelector(filterOptionsOnlineSelector);
-  const d0LevelName = useAppSelector(filterOptionsD0LevelNameSelector);
-  const d1LevelName = useAppSelector(filterOptionsD1LevelNameSelector);
-  const d2LevelName = useAppSelector(filterOptionsD2LevelNameSelector);
+  const d0LevelId = useAppSelector(filterOptionsD0LevelIdSelector);
+  const d1LevelId = useAppSelector(filterOptionsD1LevelIdSelector);
+  const d2LevelId = useAppSelector(filterOptionsD2LevelIdSelector);
   const certificate = useAppSelector(filterOptionsCertificateSelector);
   const area = useAppSelector(filterOptionsAreaSelector);
   const isLoading = useAppSelector(filterOptionsIsLoadingSelector);
@@ -52,9 +52,9 @@ export const useSearchActivities = () => {
     district,
     days,
     online,
-    d0LevelName,
-    d1LevelName,
-    d2LevelName,
+    d0LevelId,
+    d1LevelId,
+    d2LevelId,
     certificate,
     area,
     isLoading,

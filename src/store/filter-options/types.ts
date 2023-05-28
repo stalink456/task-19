@@ -1,14 +1,15 @@
 export type FilterValues = {
   value: string;
+  label: string;
 };
 
 export type FilterOptionsType = Record<
   | 'district'
   | 'days'
   | 'online'
-  | 'd0LevelName'
-  | 'd1LevelName'
-  | 'd2LevelName'
+  | 'd0LevelId'
+  | 'd1LevelId'
+  | 'd2LevelId'
   | 'certificate'
   | 'area',
   FilterValues[]

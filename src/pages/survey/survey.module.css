@@ -1,0 +1,18 @@
+@import '../../css/variables.css';
+
+.survey {
+  padding: 80px 0px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 530px) {
+  .survey__container {
+    padding: 0px;
+    box-shadow: none;
+    width: 300px;
+  }
+}

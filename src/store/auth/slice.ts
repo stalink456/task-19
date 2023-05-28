@@ -2,7 +2,7 @@ import { CaseReducer, createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { AuthTypeInitialStateType, UserData } from './types';
 
 const initialState: AuthTypeInitialStateType = {
-  uuid: '94200f15-d1a5-479d-9b5a-93c525f03278', // поставить null!
+  userId: null, // поставить null! '101391104'
   fio: null,
   date: null,
   sex: null,
@@ -22,7 +22,7 @@ const success: CaseReducer<AuthTypeInitialStateType, PayloadAction<string>> = (
   state,
   { payload }
 ) => {
-  state.uuid = payload;
+  state.userId = payload;
   state.isLoading = false;
 };
 

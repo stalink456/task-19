@@ -8,9 +8,11 @@ type ScheduleType = {
 export type ActivitiesType = {
   address: string;
   area: string;
-  d1LevelName: string;
-  d2LevelName: string;
-  d3LevelName: string;
+  d1LevelName?: string;
+  d2LevelName?: string;
+  d1LevelId: string;
+  d2LevelId: string;
+  d3LevelId: string;
   dateFinished: string;
   dateStarted: string;
   district: string;
@@ -29,9 +31,9 @@ export type SearchActivitiesInitialStateType = {
 export type SearchActivitiesRequestType = {
   area?: string[];
   certificate?: string;
-  d0LevelName?: string[];
-  d1LevelName?: string[];
-  d2LevelName?: string[];
+  d0LevelId?: string[];
+  d1LevelId?: string[];
+  d2LevelId?: string[];
   days?: string[];
   district?: string[];
   online?: string;

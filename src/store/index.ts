@@ -7,6 +7,10 @@ import { notificationsReducer } from './notifications';
 import { recomendedActivitiesReducer } from './recomended-activities/slice';
 import { filterOptionsReducer } from './filter-options';
 import { searchActivitiesReducer } from './activities-search';
+import { surveyReducer } from './survey/slice';
+import { availableDatesReducer } from './avalibale-dates';
+import { userActivitiesReducer } from './user-activities';
+import { userActivitiesItemsReducer } from './user-activities-items';
 
 const sagaMiddleware = createSagaMiddleware();
 const middlewares = [sagaMiddleware];
@@ -18,6 +22,10 @@ export const store = configureStore({
     recomendedActivities: recomendedActivitiesReducer,
     filterOptions: filterOptionsReducer,
     searchActivities: searchActivitiesReducer,
+    survey: surveyReducer,
+    availableDates: availableDatesReducer,
+    userActivities: userActivitiesReducer,
+    userActivitiesItems: userActivitiesItemsReducer,
   },
   devTools: true,
   middleware: middlewares,

@@ -15,8 +15,12 @@ export const RecomendedCardActivities: React.FC<RecomendedActivity> =
             key={index}
             className={styles.recomended_card_activities__description}
           >
-            <Typography.Text>
-              <Link to='/search-activities'>{title}</Link>
+            <Typography.Text
+              className={styles.recomended_card_activities__description_text}
+            >
+              <Link to='/search-activities' style={{ marginBottom: '20px' }}>
+                {title}
+              </Link>
             </Typography.Text>
           </div>
         ))}

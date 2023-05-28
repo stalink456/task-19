@@ -35,6 +35,13 @@ const notifications: CaseReducer<
   }
 ) => {
   state.notifications = {
+    id: null,
+    type: null,
+    message: null,
+    description: null,
+    duration: 2,
+  };
+  state.notifications = {
     ...state.notifications,
     type,
     message,

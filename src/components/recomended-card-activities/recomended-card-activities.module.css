@@ -3,9 +3,19 @@
 .recomended_card_activities {
   flex: 1 1 31%;
   padding: 20px;
+
   box-shadow: var(--shadow-params);
   border-radius: 15px;
   align-self: stretch;
+}
+
+.recomended_card_activities__description_text {
+  font-size: 18px;
+  line-height: 120%;
+}
+
+.recomended_card_activities__description {
+  margin-bottom: 10px;
 }
 
 .recomended_card_activities:not(:last-child) {

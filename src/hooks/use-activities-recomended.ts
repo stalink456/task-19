@@ -1,6 +1,6 @@
 import React from 'react';
 import { useAppDispatch, useAppSelector } from 'store';
-import { authUUIDSelector } from 'store/auth';
+import { authUserIdSelector } from 'store/auth';
 import {
   recomendedActivitiesActions,
   recomendedActivitiesIsLoadingSelector,
@@ -12,7 +12,7 @@ export const useActivitiesRecomended = () => {
   const recomendedActivities = useAppSelector(
     recomendedActivitiesResultSelector
   );
-  const userId = useAppSelector(authUUIDSelector);
+  const userId = useAppSelector(authUserIdSelector);
   const isLoading = useAppSelector(recomendedActivitiesIsLoadingSelector);
 
   React.useEffect(() => {

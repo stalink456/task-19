@@ -1,0 +1,27 @@
+.survey_result__container {
+  width: 600px;
+  height: 560px;
+  margin: 0px 15px;
+  padding: 40px;
+  box-shadow: var(--shadow-params);
+  border-radius: 15px;
+}
+
+.survey_result__container__title {
+  font-size: 25px;
+  margin-bottom: 50px;
+}
+
+.survey_card__container__submit_button {
+  margin-top: 20px;
+}
+
+@media (max-width: 630px) {
+  .survey_card__container {
+    width: 500px;
+  }
+
+  .survey_card__container h1 {
+    font-size: 20px;
+  }
+}

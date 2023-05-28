@@ -14,9 +14,9 @@ export const SearchActivities: React.FC = () => {
     district,
     days,
     online,
-    d0LevelName,
-    d1LevelName,
-    d2LevelName,
+    d0LevelId,
+    d1LevelId,
+    d2LevelId,
     certificate,
     area,
     isLoading,
@@ -51,10 +51,15 @@ export const SearchActivities: React.FC = () => {
     <Page>
       <Space
         direction='vertical'
-        size={10}
+        size={20}
         className={styles.search_activities}
       >
-        <BackButton />
+        <Space
+          direction='vertical'
+          className={styles.search_activities__back_button}
+        >
+          <BackButton />
+        </Space>
         <Typography.Text
           type='secondary'
           className={styles.search_activities__text}
@@ -62,13 +67,7 @@ export const SearchActivities: React.FC = () => {
           Поиск активностей
         </Typography.Text>
 
-        <Form
-          //  инициализация полей
-          // initialValues={{ district: [{ value: 'jack' }] }}
-          onFinish={onFinish}
-          autoComplete='off'
-          ref={formRef}
-        >
+        <Form onFinish={onFinish} autoComplete='off' ref={formRef}>
           <div className={styles.search_activities__search_panel}>
             <Form.Item name='query'>
               <Input
@@ -97,12 +96,67 @@ export const SearchActivities: React.FC = () => {
             </Form.Item>
 
             <Form.Item
+              name='area'
+              className={styles.search_activities__third__group__area}
+            >
+              <Select placeholder='Округ' mode='multiple' options={area} />
+            </Form.Item>
+          </div>
+
+          <div className={styles.search_activities__second__group}>
+            <Form.Item
+              name='d0LevelId'
+              className={styles.search_activities__first__group__d0LevelName}
+            >
+              <Select
+                placeholder='Категория первого уровня'
+                mode='multiple'
+                options={d0LevelId}
+              />
+            </Form.Item>
+            <Form.Item
+              name='d1LevelId'
+              className={styles.search_activities__second__group__d1LevelName}
+            >
+              <Select
+                mode='multiple'
+                placeholder='Категория второго уровня'
+                options={d1LevelId}
+              />
+            </Form.Item>
+          </div>
+
+          <div className={styles.search_activities__third__group}>
+            <Form.Item
+              name='d2LevelId'
+              className={styles.search_activities__second__group__d2LevelName}
+            >
+              <Select
+                placeholder='Категория третьего уровня'
+                mode='multiple'
+                options={d2LevelId}
+              />
+            </Form.Item>
+
+            <Form.Item
+              name='certificate'
+              className={styles.search_activities__third__group__certificate}
+            >
+              <Select placeholder='Выдается сертификат' options={certificate} />
+            </Form.Item>
+
+            <Form.Item
               name='days'
               className={styles.search_activities__first_group__days}
             >
               <Select placeholder='Дни недели' mode='multiple' options={days} />
             </Form.Item>
+          </div>
 
+          <Space
+            direction='horizontal'
+            className={styles.search_activities__third__fourth}
+          >
             <Form.Item
               name='online'
               className={styles.search_activities__first__group__online}
@@ -110,63 +164,12 @@ export const SearchActivities: React.FC = () => {
               <Select placeholder='Онлайн/Оффлайн' options={online} />
             </Form.Item>
 
-            <Form.Item
-              name='d0LevelName'
-              className={styles.search_activities__first__group__d0LevelName}
-            >
-              <Select
-                placeholder='Активность1'
-                mode='multiple'
-                options={d0LevelName}
-              />
-            </Form.Item>
-          </div>
-
-          <div className={styles.search_activities__second__group}>
-            <Form.Item
-              name='d1LevelName'
-              className={styles.search_activities__second__group__d1LevelName}
-            >
-              <Select
-                mode='multiple'
-                placeholder='Активность2'
-                options={d1LevelName}
-              />
-            </Form.Item>
-
-            <Form.Item
-              name='d2LevelName'
-              className={styles.search_activities__second__group__d2LevelName}
-            >
-              <Select
-                placeholder='Активность3'
-                mode='multiple'
-                options={d2LevelName}
-              />
-            </Form.Item>
-          </div>
-
-          <div className={styles.search_activities__third__group}>
-            <Form.Item
-              name='certificate'
-              className={styles.search_activities__third__group__certificate}
-            >
-              <Select placeholder='Сертификат' options={certificate} />
-            </Form.Item>
-
-            <Form.Item
-              name='area'
-              className={styles.search_activities__third__group__area}
-            >
-              <Select placeholder='Округ' mode='multiple' options={area} />
-            </Form.Item>
-
             <Form.Item>
               <Button htmlType='button' onClick={onReset}>
                 Сбросить фильтр
               </Button>
             </Form.Item>
-          </div>
+          </Space>
         </Form>
 
         <Space direction='vertical'>{renderIsLoading()}</Space>

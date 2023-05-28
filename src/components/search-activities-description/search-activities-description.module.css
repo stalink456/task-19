@@ -1,0 +1,23 @@
+@import '../../css/variables.css';
+
+.activities__description button {
+  margin-top: 20px;
+}
+
+.activities__description__title {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 44px;
+
+  color: var(--font-color);
+}
+
+.activities__description__text {
+  font-size: 20px;
+}
+
+@media (max-width: 1064px) {
+  .activities__description {
+    width: 100%;
+  }
+}

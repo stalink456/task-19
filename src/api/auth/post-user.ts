@@ -5,7 +5,7 @@ import { UserData, UserId } from 'store/auth/types';
 export const postUser = async (body: UserData): Promise<UserId> => {
   const response = await HttpClient.call<UserData>(
     Method.Post,
-    `${process.env.REACT_APP_BASE_URL}/user/set`,
+    `${process.env.REACT_APP_BASE_URL}/userV2/set`,
     body
   );
 

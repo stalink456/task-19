@@ -1,9 +1,45 @@
 import React from 'react';
-import { Button, Space, Typography } from 'antd';
+import { Space, Typography } from 'antd';
+import { useAppDispatch, useAppSelector } from 'store';
+import {
+  userActivitiesItemsActions,
+  userActivitiesItemsIsLoadingSelector,
+  userActivitiesItemsListLengthSelector,
+  userActivitiesItemsListSelector,
+} from 'store/user-activities-items';
+import { authUserIdSelector } from 'store/auth';
+import { Loading } from 'components/ui-components/loading';
+import { CardActivities } from 'components/card-activities';
 
 import styles from './activities-yours.module.css';
 
 export const ActivitiesYours: React.FC = React.memo(() => {
+  const dispatch = useAppDispatch();
+  const isLoading = useAppSelector(userActivitiesItemsIsLoadingSelector);
+  const userActivitiesItems = useAppSelector(userActivitiesItemsListSelector);
+  const userId = useAppSelector(authUserIdSelector);
+  const activitiesLength = useAppSelector(
+    userActivitiesItemsListLengthSelector
+  );
+
+  React.useEffect(() => {
+    dispatch(userActivitiesItemsActions.request(userId as string));
+  }, []);
+
+  if (isLoading) {
+    return <Loading />;
+  }
+
+  const renderCardActivities = () => {
+    return userActivitiesItems.length ? (
+      userActivitiesItems.map((value, index) => (
+        <CardActivities key={index} {...value} />
+      ))
+    ) : (
+      <Typography.Title type='secondary'>Ничего не найдено :(</Typography.Title>
+    );
+  };
+
   return (
     <React.Fragment>
       <Space
@@ -15,14 +51,16 @@ export const ActivitiesYours: React.FC = React.memo(() => {
           type='secondary'
           className={styles.activities__yours__text}
         >
-          Календарь активностей
+          Мои активности
         </Typography.Text>
-
-        <Space size={[8, 16]} wrap>
-          {new Array(20).fill(null).map((_, index) => (
-            <Button key={index}>Кнопка</Button>
-          ))}
-          <Button key={123}>+</Button>
+        <Typography.Text
+          type='secondary'
+          className={styles.activities__yours__text}
+        >
+          {activitiesLength ? `Всего записей: ${activitiesLength}` : null}
+        </Typography.Text>
+        <Space direction='horizontal' wrap>
+          {renderCardActivities()}
         </Space>
       </Space>
     </React.Fragment>

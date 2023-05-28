@@ -5,9 +5,9 @@ const initialState: FilterOptionsInitialStateType = {
   district: [],
   days: [],
   online: [],
-  d0LevelName: [],
-  d1LevelName: [],
-  d2LevelName: [],
+  d0LevelId: [],
+  d1LevelId: [],
+  d2LevelId: [],
   certificate: [],
   area: [],
   isLoading: false,
@@ -29,9 +29,9 @@ const success: CaseReducer<
       district,
       days,
       online,
-      d0LevelName,
-      d1LevelName,
-      d2LevelName,
+      d0LevelId,
+      d1LevelId,
+      d2LevelId,
       certificate,
       area,
     },
@@ -40,9 +40,9 @@ const success: CaseReducer<
   state.district = district['district'];
   state.days = days['days'];
   state.online = online['online'];
-  state.d0LevelName = d0LevelName['d0LevelName'];
-  state.d1LevelName = d1LevelName['d1LevelName'];
-  state.d2LevelName = d2LevelName['d2LevelName'];
+  state.d0LevelId = d0LevelId['d0LevelId'];
+  state.d1LevelId = d1LevelId['d1LevelId'];
+  state.d2LevelId = d2LevelId['d2LevelId'];
   state.certificate = certificate['certificate'];
   state.area = area['area'];
 
