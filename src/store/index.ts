@@ -12,6 +12,7 @@ import { availableDatesReducer } from './avalibale-dates';
 import { userActivitiesReducer } from './user-activities';
 import { userActivitiesItemsReducer } from './user-activities-items';
 import { personalActivitiesReducer } from './personal-activities';
+import { surveyPostAnswerReducer } from './survey-post';
 
 const sagaMiddleware = createSagaMiddleware();
 const middlewares = [sagaMiddleware];
@@ -28,6 +29,7 @@ export const store = configureStore({
     userActivities: userActivitiesReducer,
     userActivitiesItems: userActivitiesItemsReducer,
     personalActivities: personalActivitiesReducer,
+    surveyPostAnswer: surveyPostAnswerReducer,
   },
   devTools: true,
   middleware: middlewares,

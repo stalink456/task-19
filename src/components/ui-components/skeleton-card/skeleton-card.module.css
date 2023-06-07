@@ -1,0 +1,23 @@
+.skeleton_card {
+  width: 370px;
+  height: 280px;
+  padding: 20px;
+  margin-right: 20px;
+
+  box-shadow: var(--shadow-params);
+  border-radius: 15px;
+  align-self: stretch;
+}
+
+@media (max-width: 1200px) {
+  .skeleton_card {
+    width: calc(35vw - 50px);
+  }
+}
+
+@media (max-width: 1065px) {
+  .skeleton_card {
+    width: 610px;
+    margin-bottom: 20px;
+  }
+}

@@ -8,8 +8,8 @@ import {
   userActivitiesItemsListSelector,
 } from 'store/user-activities-items';
 import { authUserIdSelector } from 'store/auth';
-import { Loading } from 'components/ui-components/loading';
 import { CardActivities } from 'components/card-activities';
+import { SkeletonActivitiesCard } from 'components/ui-components/skeleton-activities-card';
 
 import styles from './activities-yours.module.css';
 
@@ -26,18 +26,25 @@ export const ActivitiesYours: React.FC = React.memo(() => {
     dispatch(userActivitiesItemsActions.request(userId as string));
   }, []);
 
-  if (isLoading) {
-    return <Loading />;
-  }
-
   const renderCardActivities = () => {
     return userActivitiesItems.length ? (
       userActivitiesItems.map((value, index) => (
         <CardActivities key={index} {...value} />
       ))
     ) : (
-      <Typography.Title type='secondary'>Ничего не найдено :(</Typography.Title>
+      <Typography.Title type='secondary'>
+        Вы не участвуете ни в каких активностях
+      </Typography.Title>
     );
+  };
+
+  const renderYoursCardActivities = () => {
+    return isLoading
+      ? // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        [...new Array(4)].map((_, index) => (
+          <SkeletonActivitiesCard key={index} />
+        ))
+      : null;
   };
 
   return (
@@ -60,7 +67,7 @@ export const ActivitiesYours: React.FC = React.memo(() => {
           {activitiesLength ? `Всего записей: ${activitiesLength}` : null}
         </Typography.Text>
         <Space direction='horizontal' wrap>
-          {renderCardActivities()}
+          {isLoading ? renderYoursCardActivities() : renderCardActivities()}
         </Space>
       </Space>
     </React.Fragment>

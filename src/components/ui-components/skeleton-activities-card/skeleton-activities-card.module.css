@@ -1,0 +1,27 @@
+.skeleton_card_activities {
+  width: 285px;
+  height: 200px;
+
+  padding: 35px;
+  box-shadow: -6px 6px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+}
+
+@media (max-width: 1194px) {
+  .skeleton_card_activities {
+    width: calc(52vw - 50px);
+  }
+}
+
+@media (max-width: 1065px) {
+  .skeleton_card_activities {
+    width: 300px;
+    height: 230px;
+  }
+}
+
+@media (max-width: 660px) {
+  .skeleton_card_activities {
+    width: 470px;
+  }
+}

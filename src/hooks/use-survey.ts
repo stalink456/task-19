@@ -10,6 +10,8 @@ import {
   surveyUserAnswersSelector,
 } from 'store/survey';
 import { CheckboxValueType } from 'antd/es/checkbox/Group';
+import { authUserIdSelector } from 'store/auth';
+import { surveyPostAnswerActions } from 'store/survey-post';
 
 export const useSurvey = () => {
   const dispatch = useAppDispatch();
@@ -18,23 +20,23 @@ export const useSurvey = () => {
   const currentQuestion = useAppSelector(surveyCurrentQuestionSelector);
   const survey = useAppSelector(surveyItemsSelector);
   const surveyUserAnswers = useAppSelector(surveyUserAnswersSelector);
-  const { question, answer, type } = survey[currentQuestion];
+  const { question, answer, id, type } = survey[currentQuestion];
+  const userId = useAppSelector(authUserIdSelector);
 
   const onChangeRadioQuestion = (event: RadioChangeEvent) => {
     setAnswersUser(
       (prev) =>
         ({
           ...prev,
-          questionUser: event.target.name,
-          answerUser: event.target.value,
+          questionKey: id,
+          answer: event.target.value,
         } as AnswersType)
     );
   };
 
   const onChangeCheckboxQuestion = (value: CheckboxValueType[]) => {
     setAnswersUser(
-      (prev) =>
-        ({ ...prev, questionUser: question, answerUser: value } as AnswersType)
+      (prev) => ({ ...prev, questionKey: id, answer: value } as AnswersType)
     );
   };
 
@@ -45,14 +47,25 @@ export const useSurvey = () => {
       (prev) =>
         ({
           ...prev,
-          questionUser: question,
-          answerUser: event.target.value,
+          questionKey: id,
+          answer: event.target.value,
         } as AnswersType)
     );
   };
 
   const handleQuestionSurvey = () => {
-    dispatch(surveyActions.addItems(answersUser));
+    if (currentQuestion + 1 === surveyLength) {
+      dispatch(
+        surveyPostAnswerActions.request({
+          surveyUserAnswers: [...surveyUserAnswers, answersUser],
+          userId: userId ? userId : '',
+        })
+      );
+      dispatch(surveyActions.addItems(answersUser));
+    } else {
+      dispatch(surveyActions.addItems(answersUser));
+    }
+
     setAnswersUser(null);
   };
   return {

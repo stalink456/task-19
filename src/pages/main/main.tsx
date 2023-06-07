@@ -13,7 +13,7 @@ export const Main: React.FC = () => {
     <Page>
       <Space direction='vertical' className={styles.main}>
         <ActivitiesRecomended />
-        <Space direction='horizontal'>
+        <Space direction='horizontal' className={styles.main__activities}>
           <ActivitiesSurvey />
           <SearchActivitiesDescription />
         </Space>

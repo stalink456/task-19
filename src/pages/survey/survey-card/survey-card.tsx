@@ -24,8 +24,8 @@ export const SurveyCard: React.FC = () => {
     return type === 'radio' ? (
       <Radio.Group onChange={onChangeRadioQuestion} name={question}>
         <Space direction='vertical'>
-          {answer.map(({ value }, index) => (
-            <Radio key={index} value={value}>
+          {answer.map(({ value, id }, index) => (
+            <Radio key={index} value={id}>
               {value}
             </Radio>
           ))}

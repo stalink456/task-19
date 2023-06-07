@@ -1,5 +1,6 @@
 .card_activities {
-  width: 100%;
+  width: 285px;
+  height: 230px;
   padding: 35px;
   box-shadow: -6px 6px 20px rgba(0, 0, 0, 0.1);
   border-radius: 15px;
@@ -18,4 +19,23 @@
   line-height: 24px;
 
   color: rgba(124, 120, 119, 0.5);
+}
+
+@media (max-width: 1194px) {
+  .card_activities {
+    width: calc(52vw - 50px);
+  }
+}
+
+@media (max-width: 1065px) {
+  .card_activities {
+    width: 300px;
+    height: 230px;
+  }
+}
+
+@media (max-width: 660px) {
+  .card_activities {
+    width: 470px;
+  }
 }

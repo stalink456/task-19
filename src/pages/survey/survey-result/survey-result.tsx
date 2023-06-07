@@ -1,12 +1,14 @@
 import React from 'react';
-import { Button, Space, Typography } from 'antd';
+import { Link } from 'react-router-dom';
+import { Button, Typography } from 'antd';
+import { CheckCircleOutlined } from '@ant-design/icons';
 
 import styles from './survey-result.module.css';
-import { Link } from 'react-router-dom';
 
-export const SurveyResult: React.FC = () => {
+export const SurveyResult: React.FC = React.memo(() => {
   return (
-    <Space direction='vertical' className={styles.survey_result__container}>
+    <div className={styles.survey_result__container}>
+      <CheckCircleOutlined className={styles.survey_result__container__icon} />
       <Typography.Title
         level={3}
         className={styles.survey_result__container__title}
@@ -15,9 +17,9 @@ export const SurveyResult: React.FC = () => {
         точными
       </Typography.Title>
 
-      <Link to='/main'>
+      <Link to='/main' className={styles.survey_card__container__submit_button}>
         <Button>Перейти на главную страницу</Button>
       </Link>
-    </Space>
+    </div>
   );
-};
+});

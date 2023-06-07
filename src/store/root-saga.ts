@@ -8,6 +8,7 @@ import { watchCreateUserActivitiesSaga } from './user-activities';
 import { watchCreateavUserActivitiesItemsSaga } from './user-activities-items';
 import { watchCreateSurveySaga } from './survey';
 import { watchGetPersonalActivitiesSaga } from './personal-activities';
+import { watchCreatesurveyPostAnswerActionsSagaSaga } from './survey-post';
 
 export function* rootSaga() {
   yield all([
@@ -20,5 +21,6 @@ export function* rootSaga() {
     fork(watchCreateavUserActivitiesItemsSaga),
     fork(watchCreateSurveySaga),
     fork(watchGetPersonalActivitiesSaga),
+    fork(watchCreatesurveyPostAnswerActionsSagaSaga),
   ]);
 }

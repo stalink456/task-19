@@ -1,15 +1,17 @@
 export type AnswerType = {
+  id: string;
   value: string;
 };
 
 export type AnswersType = {
-  questionUser: string;
-  answerUser: string | string[];
+  questionKey: string;
+  answer: string | string[];
 } | null;
 
 export type SurveyType = {
   question: string;
   answer: AnswerType[];
+  id: string;
   type: 'checkbox' | 'radio' | 'input';
 };
 

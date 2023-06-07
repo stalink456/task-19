@@ -1,30 +1,14 @@
 import React from 'react';
-import {
-  Button,
-  Modal,
-  Radio,
-  RadioChangeEvent,
-  Space,
-  Typography,
-} from 'antd';
+import moment from 'moment';
+import { Button, DatePicker, Modal, Space, Typography } from 'antd';
 import { ActivitiesType } from 'store/activities-search/types';
-import { useAppDispatch, useAppSelector } from 'store';
-import {
-  availableDatesActions,
-  availableDatesIsLoadingSelector,
-  availableDatesItemsSelector,
-} from 'store/avalibale-dates';
 import { Loading } from 'components/ui-components/loading';
+import { useCard } from 'hooks/use-card';
+import { disabledDate } from 'utils/disabledDate';
 
 import styles from './card.module.css';
-import {
-  userActivitiesActions,
-  userActivitiesIsLoadingSelector,
-} from 'store/user-activities';
-import { authUserIdSelector } from 'store/auth';
 
 export const Card: React.FC<ActivitiesType> = React.memo((props) => {
-  const [isModalOpen, setIsModalOpen] = React.useState(false);
   const {
     address,
     area,
@@ -36,50 +20,24 @@ export const Card: React.FC<ActivitiesType> = React.memo((props) => {
     dateStarted,
     scheduleClosed,
   } = props;
-  const dispatch = useAppDispatch();
-  const availableDates = useAppSelector(availableDatesItemsSelector);
-  const isLoading = useAppSelector(availableDatesIsLoadingSelector);
-  const userId = useAppSelector(authUserIdSelector);
-  const isLoadingPostUserActivities = useAppSelector(
-    userActivitiesIsLoadingSelector
-  );
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [chooseDateActivity, setChooseDateActivity] = React.useState<
-    null | string
-  >(null);
 
-  const showModal = () => {
-    setIsModalOpen(true);
-    dispatch(
-      availableDatesActions.request({ groupId, dateStarted, dateFinished })
-    );
-  };
+  const {
+    time,
+    isModalOpen,
+    chooseDate,
+    isLoading,
+    availableDates,
+    isLoadingPostUserActivities,
 
-  const handleOk = () => {
-    const dateArray = chooseDateActivity!.split(' ');
-    dispatch(
-      userActivitiesActions.request({
-        userId: userId as string,
-        groupId,
-        date: dateArray[0],
-        timeStart: dateArray[2],
-        timeEnd: dateArray[2],
-      })
-    );
-    setIsModalOpen(false);
-  };
-
-  const handleCancel = () => {
-    setIsModalOpen(false);
-  };
-
-  const onChangeDateACtivity = (event: RadioChangeEvent) => {
-    setChooseDateActivity(event.target.value);
-  };
-
-  if (isLoadingPostUserActivities) {
-    return <Loading />;
-  }
+    showModal,
+    handleCancel,
+    onChange,
+    handleOk,
+  } = useCard({
+    groupId,
+    dateFinished,
+    dateStarted,
+  });
 
   const renderAcceptActivity = () => {
     return isLoading ? (
@@ -89,18 +47,20 @@ export const Card: React.FC<ActivitiesType> = React.memo((props) => {
         <Typography.Text>
           Выберите подходящую дату и подтвердите запись
         </Typography.Text>
-        <Radio.Group onChange={onChangeDateACtivity} name='dateTime'>
-          <Space direction='vertical'>
-            {availableDates.map(({ date, day, timeStart }) => {
-              const time = `${date} ${day} ${timeStart}`;
-              return (
-                <Radio key={time} value={time}>
-                  {time}
-                </Radio>
-              );
-            })}
-          </Space>
-        </Radio.Group>
+        <Space direction='horizontal' className={styles.card__date_time}>
+          <DatePicker
+            size='large'
+            disabledDate={(current) =>
+              disabledDate(moment(current.toDate()), availableDates)
+            }
+            format='DD.MM.YYYY'
+            onChange={onChange}
+          />
+
+          <Typography.Text className={styles.card__date_time_text}>
+            {time ? `Доступное время: ${time}` : ''}
+          </Typography.Text>
+        </Space>
       </React.Fragment>
     );
   };
@@ -132,15 +92,25 @@ export const Card: React.FC<ActivitiesType> = React.memo((props) => {
           </Typography.Text>
         </Space>
         <Button type='primary' onClick={showModal}>
-          Записаться!
+          Записаться
         </Button>
         <Modal
           title='Выберите время'
           open={isModalOpen}
           onOk={handleOk}
-          okText='Подтвердить!'
           cancelText='Закрыть'
           onCancel={handleCancel}
+          footer={[
+            <Button
+              key='submit'
+              type='primary'
+              loading={isLoadingPostUserActivities}
+              onClick={handleOk}
+              disabled={chooseDate === null && time === null}
+            >
+              Подтвердить
+            </Button>,
+          ]}
         >
           {renderAcceptActivity()}
         </Modal>

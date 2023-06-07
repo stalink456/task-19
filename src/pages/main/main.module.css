@@ -5,3 +5,16 @@
   height: 100%;
   margin: 40px 0px;
 }
+
+.main__activities > div {
+  display: flex;
+  flex-direction: row;
+  max-width: 580px;
+}
+
+@media (max-width: 1065px) {
+  .main__activities {
+    flex-direction: column;
+    width: 100%;
+  }
+}
