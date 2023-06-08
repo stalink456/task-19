@@ -12,11 +12,11 @@
 }
 
 .survey_card__container h1 {
-  font-size: 24px;
+  font-size: 1.5em;
 }
 
 .survey_card__container span {
-  font-size: 16px;
+  font-size: 1em;
 }
 
 .survey_card__container__submit_button {
@@ -29,6 +29,6 @@
   }
 
   .survey_card__container h1 {
-    font-size: 20px;
+    font-size: 1.25em;
   }
 }

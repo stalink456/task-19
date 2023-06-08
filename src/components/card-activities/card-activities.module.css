@@ -14,21 +14,21 @@
 
 .card_activities__category_text {
   font-weight: 700;
-  font-size: 18px;
+  font-size: 1.125em;
   line-height: 24px;
   color: #222222 !important;
 }
 
 .card_activities__activity_text {
   font-weight: 700;
-  font-size: 18px;
+  font-size: 1.125em;
   line-height: 20px;
 
   color: var(--font-color);
 }
 
 .card_activities span {
-  font-size: 16px;
+  font-size: 1em;
   color: #222222;
 }
 
