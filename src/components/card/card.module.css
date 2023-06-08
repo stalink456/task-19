@@ -43,3 +43,8 @@
   font-weight: 400;
   font-size: 1em;
 }
+
+.card__modal > div {
+  height: 13em;
+  width: 33em;
+}

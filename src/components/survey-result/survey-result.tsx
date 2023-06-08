@@ -18,7 +18,7 @@ export const SurveyResult: React.FC = React.memo(() => {
       </Typography.Title>
 
       <Link to='/main' className={styles.survey_card__container__submit_button}>
-        <Button>Перейти на главную страницу</Button>
+        <Button style={{ height: '2.5em' }}>Перейти на главную страницу</Button>
       </Link>
     </div>
   );

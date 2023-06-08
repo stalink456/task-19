@@ -12,14 +12,16 @@ import {
 import { CheckboxValueType } from 'antd/es/checkbox/Group';
 import { authUserIdSelector } from 'store/auth';
 import { surveyPostAnswerActions } from 'store/survey-post';
+import { addressItemsSelector } from 'store/address';
 
-export const useSurvey = () => {
+export const useSurveyCard = () => {
   const dispatch = useAppDispatch();
   const [answersUser, setAnswersUser] = React.useState<AnswersType>(null);
   const surveyLength = useAppSelector(surveyLengthSelector);
   const currentQuestion = useAppSelector(surveyCurrentQuestionSelector);
   const survey = useAppSelector(surveyItemsSelector);
   const surveyUserAnswers = useAppSelector(surveyUserAnswersSelector);
+  const address = useAppSelector(addressItemsSelector);
   const { question, answer, id, type } = survey[currentQuestion];
   const userId = useAppSelector(authUserIdSelector);
 
@@ -78,6 +80,7 @@ export const useSurvey = () => {
     type,
     question,
     currentQuestion,
+    address, // доделать debounce
 
     onChangeRadioQuestion,
     onChangeCheckboxQuestion,

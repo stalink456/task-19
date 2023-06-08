@@ -76,6 +76,7 @@ export const SearchActivities: React.FC = () => {
                 type='primary'
                 size='large'
                 className={styles.search_activities__search_panel__button}
+                style={{ height: '2.5em' }}
               />
             </Form.Item>
             <Button
@@ -83,6 +84,7 @@ export const SearchActivities: React.FC = () => {
               htmlType='submit'
               size='large'
               loading={false}
+              style={{ height: '2.5em' }}
             >
               Поиск
             </Button>
@@ -166,7 +168,11 @@ export const SearchActivities: React.FC = () => {
             </Form.Item>
 
             <Form.Item>
-              <Button htmlType='button' onClick={onReset}>
+              <Button
+                htmlType='button'
+                onClick={onReset}
+                style={{ height: '2.5em' }}
+              >
                 Сбросить фильтр
               </Button>
             </Form.Item>

@@ -10,7 +10,12 @@ export const ExitButton: React.FC = React.memo(() => {
   const renderExitButton = () => {
     return showButton ? (
       <div className={styels.exit_button}>
-        <Button danger size='large' onClick={handleExitButton}>
+        <Button
+          danger
+          size='large'
+          onClick={handleExitButton}
+          style={{ height: '2.5em' }}
+        >
           Выход
         </Button>
       </div>

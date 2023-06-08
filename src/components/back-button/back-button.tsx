@@ -6,7 +6,7 @@ export const BackButton: React.FC = React.memo(() => {
   return (
     <React.Fragment>
       <Link to='/main'>
-        <Button>Назад</Button>
+        <Button style={{ height: '2.5em' }}>Назад</Button>
       </Link>
     </React.Fragment>
   );

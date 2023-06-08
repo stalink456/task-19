@@ -1,0 +1,7 @@
+.switch_button {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+
+  z-index: 1;
+}

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button, Checkbox, Input, Radio, Space, Typography } from 'antd';
 import { BackButton } from 'components/back-button';
-import { useSurvey } from 'hooks/use-survey';
+import { useSurveyCard } from 'hooks/use-survey-card';
 
 import styles from './survey-card.module.css';
 
@@ -18,7 +18,7 @@ export const SurveyCard: React.FC = () => {
     onChangeCheckboxQuestion,
     onChangeInputQuestion,
     handleQuestionSurvey,
-  } = useSurvey();
+  } = useSurveyCard();
 
   const renderRadio = () => {
     return type === 'radio' ? (
@@ -72,6 +72,7 @@ export const SurveyCard: React.FC = () => {
         type='primary'
         disabled={!answersUser}
         className={styles.survey_card__container__submit_button}
+        style={{ height: '2.5em' }}
       >
         Следующий вопрос!
       </Button>

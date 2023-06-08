@@ -18,7 +18,7 @@ export const SearchActivitiesDescription: React.FC = React.memo(() => {
           Пройдите опрос и узнайте, какие направления подходят именно Вам.
         </Typography.Text>
         <Link to='/search-activities'>
-          <Button type='primary' block>
+          <Button type='primary' block style={{ height: '2.5em' }}>
             Выбрать занятие
           </Button>
         </Link>

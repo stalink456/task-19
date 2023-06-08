@@ -91,10 +91,11 @@ export const Card: React.FC<ActivitiesType> = React.memo((props) => {
             Время работы: {scheduleClosed}
           </Typography.Text>
         </Space>
-        <Button type='primary' onClick={showModal}>
+        <Button type='primary' onClick={showModal} style={{ height: '2.5em' }}>
           Записаться
         </Button>
         <Modal
+          className={styles.card__modal}
           title='Выберите время'
           open={isModalOpen}
           onOk={handleOk}
@@ -107,6 +108,7 @@ export const Card: React.FC<ActivitiesType> = React.memo((props) => {
               loading={isLoadingPostUserActivities}
               onClick={handleOk}
               disabled={chooseDate === null && time === null}
+              style={{ height: '2.5em' }}
             >
               Подтвердить
             </Button>,

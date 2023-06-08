@@ -13,6 +13,7 @@ import { userActivitiesReducer } from './user-activities';
 import { userActivitiesItemsReducer } from './user-activities-items';
 import { personalActivitiesReducer } from './personal-activities';
 import { surveyPostAnswerReducer } from './survey-post';
+import { addressReducer } from './address';
 
 const sagaMiddleware = createSagaMiddleware();
 const middlewares = [sagaMiddleware];
@@ -30,6 +31,7 @@ export const store = configureStore({
     userActivitiesItems: userActivitiesItemsReducer,
     personalActivities: personalActivitiesReducer,
     surveyPostAnswer: surveyPostAnswerReducer,
+    address: addressReducer,
   },
   devTools: true,
   middleware: middlewares,

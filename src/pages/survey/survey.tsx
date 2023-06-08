@@ -7,8 +7,8 @@ import {
   surveyIsLoadingSelector,
   surveyLengthSelector,
 } from 'store/survey';
-import { SurveyCard } from './survey-card';
-import { SurveyResult } from './survey-result';
+import { SurveyResult } from '../../components/survey-result';
+import { SurveyCard } from 'components/survey-card';
 import { Loading } from 'components/ui-components/loading';
 
 export const Survey: React.FC = () => {

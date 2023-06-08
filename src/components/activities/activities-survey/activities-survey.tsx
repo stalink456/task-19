@@ -18,7 +18,7 @@ export const ActivitiesSurvey: React.FC = React.memo(() => {
           Пройдите опрос и узнайте, какие направления подходят именно Вам.
         </Typography.Text>
         <Link to='/survey'>
-          <Button type='primary' block>
+          <Button type='primary' block style={{ height: '2.5em' }}>
             Пройти опрос
           </Button>
         </Link>

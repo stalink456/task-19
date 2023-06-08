@@ -46,7 +46,11 @@ export const ActivitiesYours: React.FC = React.memo(() => {
         >
           {activitiesLength ? `Всего записей: ${activitiesLength}` : null}
         </Typography.Text>
-        <Space direction='horizontal' wrap>
+        <Space
+          direction='horizontal'
+          wrap
+          className={styles.activities__yours__container}
+        >
           {isLoading ? renderYoursCardActivities() : renderCardActivities()}
         </Space>
       </Space>
