@@ -15,11 +15,11 @@
 
 .recomended_card_activities h3 {
   margin: 10px 0;
-  font-size: 18px;
+  font-size: 1.125em;
 }
 
 .recomended_card_activities__description_text {
-  font-size: 16px;
+  font-size: 1em;
   line-height: 120%;
 }
 

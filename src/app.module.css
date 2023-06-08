@@ -1,3 +1,7 @@
 .app {
   min-height: 100vh;
 }
+
+[class^=ant-] {
+  font-size: inherit !important;
+}

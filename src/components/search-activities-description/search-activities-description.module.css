@@ -12,18 +12,18 @@
 
 .activities__description__title {
   font-weight: 700;
-  font-size: 24px;
+  font-size: 1.5em;
   line-height: 44px;
 
   color: var(--font-color);
 }
 
 .activities__description__text {
-  font-size: 16px;
+  font-size: 1em;
 }
 
 .activities__description button span {
-  font-size: 16px;
+  font-size: 1em;
 }
 
 @media (max-width: 1064px) {

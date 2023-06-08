@@ -11,24 +11,24 @@
 }
 
 .card__category h5 {
-  font-size: 24px;
+  font-size: 1.5em;
   color: #222 !important;
 }
 
 .card__category span {
-  font-size: 16px;
+  font-size: 1em;
 }
 
 .card__category_text {
   font-weight: 700;
-  font-size: 20px;
+  font-size: 1.25em;
   line-height: 24px;
   color: #7c7877;
 }
 
 .card__activity_text {
   font-weight: 700;
-  font-size: 20px;
+  font-size: 1.25em;
   line-height: 24px;
 
   color: rgba(124, 120, 119, 0.5);
@@ -41,5 +41,5 @@
 .card__date_time_text {
   margin-left: 10px;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 1em;
 }
