@@ -16,13 +16,13 @@
 }
 
 .survey_result__container h3 {
-  font-size: 24px;
+  font-size: 1em;
   text-align: center;
   margin-bottom: 50px;
 }
 
 .survey_result__container span {
-  font-size: 16px;
+  font-size: 1em;
 }
 
 .survey_result__container__icon {
@@ -49,7 +49,7 @@
   }
 
   .survey_card__container h1 {
-    font-size: 20px;
+    font-size: 1.25em;
   }
 }
 
