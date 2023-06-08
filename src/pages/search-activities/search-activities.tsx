@@ -98,7 +98,7 @@ export const SearchActivities: React.FC = () => {
 
             <Form.Item
               name='area'
-              className={styles.search_activities__third__group__area}
+              className={styles.search_activities__first__group__area}
             >
               <Select placeholder='Округ' mode='multiple' options={area} />
             </Form.Item>
@@ -107,7 +107,7 @@ export const SearchActivities: React.FC = () => {
           <div className={styles.search_activities__second__group}>
             <Form.Item
               name='d0LevelId'
-              className={styles.search_activities__first__group__d0LevelName}
+              className={styles.search_activities__second__group__d0LevelName}
             >
               <Select
                 placeholder='Категория первого уровня'
@@ -130,7 +130,7 @@ export const SearchActivities: React.FC = () => {
           <div className={styles.search_activities__third__group}>
             <Form.Item
               name='d2LevelId'
-              className={styles.search_activities__second__group__d2LevelName}
+              className={styles.search_activities__third__group__d2LevelName}
             >
               <Select
                 placeholder='Категория третьего уровня'

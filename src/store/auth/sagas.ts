@@ -14,8 +14,8 @@ function* authSaga(props: PayloadAction<UserData>) {
       notificationsActions.notifications({
         notifications: {
           type: 'success',
-          message: `Добро пожаловать ${props.payload.fio}`,
-          description: 'Тут могла быть Ваша реклама',
+          message: `Добро пожаловать!`,
+          description: `${props.payload.fio}`,
         },
       })
     );

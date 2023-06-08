@@ -68,6 +68,7 @@ export const useSurvey = () => {
 
     setAnswersUser(null);
   };
+
   return {
     answersUser,
     surveyLength,

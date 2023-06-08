@@ -5,7 +5,6 @@
   padding-top: 40px;
   position: relative;
   composes: slide_bottom from global;
-
 }
 
 .activities__yours__text {
