@@ -2,7 +2,7 @@ import { CaseReducer, createSlice, PayloadAction } from '@reduxjs/toolkit';
 import {
   ActivitiesType,
   SearchActivitiesInitialStateType,
-  SearchActivitiesRequestType,
+  SearchActivitiesWithUserIdRequestType,
 } from './types';
 
 const initialState: SearchActivitiesInitialStateType = {
@@ -14,7 +14,7 @@ const NAME = 'searchActivities';
 
 const request: CaseReducer<
   SearchActivitiesInitialStateType,
-  PayloadAction<SearchActivitiesRequestType>
+  PayloadAction<SearchActivitiesWithUserIdRequestType>
 > = (state) => {
   state.isLoading = true;
 };

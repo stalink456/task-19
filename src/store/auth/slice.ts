@@ -30,6 +30,13 @@ const failure: CaseReducer<AuthTypeInitialStateType> = (state) => {
   state.isLoading = false;
 };
 
+const removeUsersData: CaseReducer<AuthTypeInitialStateType> = (state) => {
+  state.userId = null;
+  state.fio = null;
+  state.date = null;
+  state.sex = null;
+};
+
 export const { actions: authActions, reducer: authReducer } = createSlice({
   name: NAME,
   initialState: initialState,
@@ -37,5 +44,6 @@ export const { actions: authActions, reducer: authReducer } = createSlice({
     request,
     success,
     failure,
+    removeUsersData,
   },
 });

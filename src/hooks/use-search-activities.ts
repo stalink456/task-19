@@ -6,7 +6,11 @@ import {
   searchActivitiesIsLoadingSelector,
   searchActivitiesItemsSelector,
 } from 'store/activities-search';
-import { SearchActivitiesRequestType } from 'store/activities-search/types';
+import {
+  SearchActivitiesRequestType,
+  SearchActivitiesWithUserIdRequestType,
+} from 'store/activities-search/types';
+import { authUserIdSelector } from 'store/auth';
 import {
   filterOptionsActions,
   filterOptionsAreaSelector,
@@ -34,13 +38,19 @@ export const useSearchActivities = () => {
   const isLoading = useAppSelector(filterOptionsIsLoadingSelector);
   const isLoadingSearch = useAppSelector(searchActivitiesIsLoadingSelector);
   const searchActivitiesItems = useAppSelector(searchActivitiesItemsSelector);
+  const userId = useAppSelector(authUserIdSelector);
 
   React.useEffect(() => {
     dispatch(filterOptionsActions.request());
   }, []);
 
   const onFinish = (values: SearchActivitiesRequestType) => {
-    dispatch(searchActivitiesActions.request(values));
+    dispatch(
+      searchActivitiesActions.request({
+        values,
+        userId,
+      } as SearchActivitiesWithUserIdRequestType)
+    );
   };
 
   const onReset = () => {

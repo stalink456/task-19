@@ -2,14 +2,15 @@ import HttpClient from 'utils/httpClient';
 import { Method } from '../types';
 import {
   ActivitiesType,
-  SearchActivitiesRequestType,
+  SearchActivitiesWithUserIdRequestType,
 } from 'store/activities-search/types';
 import { isEmptyValue } from 'utils/isEmptyValue';
 import { generateLink } from 'utils/generateLink';
 
 export const getActivitiesSearch = async (
-  props: SearchActivitiesRequestType
+  props: SearchActivitiesWithUserIdRequestType
 ): Promise<ActivitiesType[]> => {
+  const { values, userId } = props;
   const {
     area,
     certificate,
@@ -20,7 +21,7 @@ export const getActivitiesSearch = async (
     district,
     online,
     query,
-  } = props;
+  } = values;
 
   const reqArea = isEmptyValue(area);
   const reqCertificate = isEmptyValue(certificate);
@@ -46,7 +47,9 @@ export const getActivitiesSearch = async (
 
   const { data } = await HttpClient.call(
     Method.Post,
-    `${process.env.REACT_APP_BASE_URL}/search?${link}`
+    `${process.env.REACT_APP_BASE_URL}/search?userId=${userId}${
+      link ? `&${link}` : link
+    }`
   );
 
   return data;

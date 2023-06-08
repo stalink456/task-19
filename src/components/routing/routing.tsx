@@ -2,6 +2,7 @@ import React, { Suspense } from 'react';
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import { Auth } from 'pages/auth';
 import { Loading } from 'components/ui-components/loading';
+import { ExitButton } from 'components/exit-button';
 
 const Main = React.lazy(
   () => import(/* webpackChunkName: "MainPage" */ '../../pages/main')
@@ -29,6 +30,7 @@ export const Routing: React.FC = () => {
   return (
     <React.Fragment>
       <Router>
+        <ExitButton />
         <Routes>
           <Route path='/' element={<Auth />} />
           <Route

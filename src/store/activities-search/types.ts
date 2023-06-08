@@ -39,3 +39,8 @@ export type SearchActivitiesRequestType = {
   online?: string;
   query?: string;
 };
+
+export type SearchActivitiesWithUserIdRequestType = {
+  values: SearchActivitiesRequestType;
+  userId: string;
+};
