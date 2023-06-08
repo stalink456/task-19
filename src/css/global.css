@@ -24,3 +24,7 @@ body {
 body {
   font-size: 24px;
 }
+
+button.ant-btn.css-dev-only-do-not-override-w8mnev {
+  height: 2em !important;
+}
