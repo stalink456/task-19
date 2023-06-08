@@ -1,4 +1,10 @@
 @import '../../../css/variables.css';
+@import '../../../css/animation.css';
+
+.activities__quiz {
+  position: relative;
+  composes: slide_right from global;
+}
 
 .activities__quiz button {
   margin-top: 20px;

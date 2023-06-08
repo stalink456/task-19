@@ -1,7 +1,11 @@
 @import '../../../css/variables.css';
+@import '../../../css/animation.css';
 
 .activities__recomended {
   margin-bottom: 40px;
+
+  position: relative;
+  composes: slide_top from global;
 }
 
 .activities__recomended__text {

@@ -1,7 +1,11 @@
 @import '../../../css/variables.css';
+@import '../../../css/animation.css';
 
 .activities__yours {
   padding-top: 40px;
+  position: relative;
+  composes: slide_bottom from global;
+
 }
 
 .activities__yours__text {

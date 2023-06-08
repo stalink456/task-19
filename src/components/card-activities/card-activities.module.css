@@ -1,9 +1,14 @@
+@import '../../css/animation.css';
+
 .card_activities {
   width: 285px;
   height: 230px;
   padding: 35px;
   box-shadow: -6px 6px 20px rgba(0, 0, 0, 0.1);
   border-radius: 15px;
+
+  position: relative;
+  composes: opacity from global;
 }
 
 .card_activities__category_text {

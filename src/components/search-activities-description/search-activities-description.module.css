@@ -1,4 +1,10 @@
 @import '../../css/variables.css';
+@import '../../css/animation.css';
+
+.activities__description {
+  position: relative;
+  composes: slide_left from global;
+}
 
 .activities__description button {
   margin-top: 20px;
