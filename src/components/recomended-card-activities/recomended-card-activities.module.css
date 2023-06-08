@@ -13,8 +13,13 @@
   composes: opacity from global;
 }
 
-.recomended_card_activities__description_text {
+.recomended_card_activities h3 {
+  margin: 10px 0;
   font-size: 18px;
+}
+
+.recomended_card_activities__description_text {
+  font-size: 16px;
   line-height: 120%;
 }
 

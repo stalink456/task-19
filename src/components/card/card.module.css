@@ -10,6 +10,15 @@
   composes: opacity from global;
 }
 
+.card__category h5 {
+  font-size: 24px;
+  color: #222 !important;
+}
+
+.card__category span {
+  font-size: 16px;
+}
+
 .card__category_text {
   font-weight: 700;
   font-size: 20px;

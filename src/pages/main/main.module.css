@@ -6,14 +6,16 @@
   margin: 40px 0px;
 }
 
-.main__activities > div {
+.main__activities {
   display: flex;
   flex-direction: row;
-  max-width: 580px;
+  justify-content: space-between;
+  /* max-width: 580px; */
 }
 
 @media (max-width: 1065px) {
   .main__activities {
+    display: block;
     flex-direction: column;
     width: 100%;
   }

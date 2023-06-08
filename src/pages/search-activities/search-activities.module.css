@@ -7,6 +7,11 @@
   composes: opacity from global;
 }
 
+.search_activities h5 {
+  margin: 0;
+  font-size: 24px;
+}
+
 .search_activities__text {
   font-weight: 700;
   font-size: 36px;

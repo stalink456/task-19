@@ -1,9 +1,22 @@
+@import '../../../css/animation.css';
+
 .survey_card__container {
   width: 600px;
   margin: 0px 15px;
   padding: 40px;
   box-shadow: var(--shadow-params);
   border-radius: 15px;
+
+  position: relative;
+  composes: opacity from global;
+}
+
+.survey_card__container h1 {
+  font-size: 24px;
+}
+
+.survey_card__container span {
+  font-size: 16px;
 }
 
 .survey_card__container__submit_button {

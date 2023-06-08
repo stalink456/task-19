@@ -37,7 +37,7 @@ export const SearchActivities: React.FC = () => {
         <Card key={index} {...value} />
       ))
     ) : (
-      <Typography.Title type='secondary'>
+      <Typography.Title level={5} type='secondary'>
         Ничего не найдено по запросу
       </Typography.Title>
     );
@@ -60,12 +60,13 @@ export const SearchActivities: React.FC = () => {
         >
           <BackButton />
         </Space>
-        <Typography.Text
+        <Typography.Title
+          level={5}
           type='secondary'
           className={styles.search_activities__text}
         >
           Поиск активностей
-        </Typography.Text>
+        </Typography.Title>
 
         <Form onFinish={onFinish} autoComplete='off' ref={formRef}>
           <div className={styles.search_activities__search_panel}>

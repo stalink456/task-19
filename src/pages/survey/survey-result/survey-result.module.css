@@ -1,3 +1,5 @@
+@import '../../../css/animation.css';
+
 .survey_result__container {
   width: 600px;
   height: 400px;
@@ -8,6 +10,19 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+  position: relative;
+  composes: opacity from global;
+}
+
+.survey_result__container h3 {
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.survey_result__container span {
+  font-size: 16px;
 }
 
 .survey_result__container__icon {
@@ -19,12 +34,6 @@
 
   width: 80px;
   height: 80px;
-}
-
-.survey_result__container__title {
-  font-size: 25px;
-  text-align: center;
-  margin-bottom: 50px;
 }
 
 .survey_card__container__submit_button {

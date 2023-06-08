@@ -1,4 +1,5 @@
 @import '../../css/animation.css';
+@import '../../css/variables.css';
 
 .card_activities {
   width: 285px;
@@ -13,22 +14,27 @@
 
 .card_activities__category_text {
   font-weight: 700;
-  font-size: 20px;
+  font-size: 18px;
   line-height: 24px;
-  color: #7c7877;
+  color: #222222 !important;
 }
 
 .card_activities__activity_text {
   font-weight: 700;
-  font-size: 20px;
-  line-height: 24px;
+  font-size: 18px;
+  line-height: 20px;
 
-  color: rgba(124, 120, 119, 0.5);
+  color: var(--font-color);
 }
 
-@media (max-width: 1194px) {
+.card_activities span {
+  font-size: 16px;
+  color: #222222;
+}
+
+@media (max-width: 1212px) {
   .card_activities {
-    width: calc(52vw - 50px);
+    width: calc(55vw - 90px);
   }
 }
 

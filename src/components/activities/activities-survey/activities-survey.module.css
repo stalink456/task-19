@@ -12,14 +12,18 @@
 
 .activities__quiz__title {
   font-weight: 700;
-  font-size: 36px;
+  font-size: 24px;
   line-height: 44px;
 
   color: var(--font-color);
 }
 
 .activities__quiz__text {
-  font-size: 20px;
+  font-size: 16px;
+}
+
+.activities__quiz button span {
+  font-size: 16px;
 }
 
 @media (max-width: 1064px) {

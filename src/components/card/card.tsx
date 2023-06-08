@@ -68,7 +68,7 @@ export const Card: React.FC<ActivitiesType> = React.memo((props) => {
   return (
     <div className={styles.card}>
       <Space direction='vertical' size={8}>
-        <Space direction='vertical' size={0}>
+        <Space direction='vertical' size={0} className={styles.card__category}>
           <Typography.Title
             type='secondary'
             level={5}
