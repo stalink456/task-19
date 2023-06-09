@@ -20,7 +20,7 @@ export const ActivitiesSurvey: React.FC = React.memo(() => {
         <Link
           to={
             process.env.REACT_APP_LTC
-              ? process.env.REACT_APP_LTC + '/survey'
+              ? process.env.REACT_APP_LTC + 'survey'
               : '/survey'
           }
         >

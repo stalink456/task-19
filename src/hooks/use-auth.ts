@@ -23,7 +23,7 @@ export const useAuth = () => {
 
   React.useEffect(() => {
     const path = process.env.REACT_APP_LTC
-      ? process.env.REACT_APP_LTC + '/main'
+      ? process.env.REACT_APP_LTC + 'main'
       : '/main';
 
     if (userId) {

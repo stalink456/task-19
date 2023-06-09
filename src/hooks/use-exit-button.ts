@@ -9,9 +9,7 @@ export const useExitButton = () => {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
   const userId = useAppSelector(authUserIdSelector);
-  const path = process.env.REACT_APP_LTC
-    ? process.env.REACT_APP_LTC + '/'
-    : '/';
+  const path = process.env.REACT_APP_LTC ?? '/';
 
   React.useEffect(() => {
     if (location.pathname !== path) {

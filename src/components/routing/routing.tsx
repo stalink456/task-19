@@ -33,15 +33,13 @@ export const Routing: React.FC = () => {
         <ExitButton />
         <Routes>
           <Route
-            path={
-              process.env.REACT_APP_LTC ? process.env.REACT_APP_LTC + '/' : '/'
-            }
+            path={process.env.REACT_APP_LTC ? process.env.REACT_APP_LTC : '/'}
             element={<Auth />}
           />
           <Route
             path={
               process.env.REACT_APP_LTC
-                ? process.env.REACT_APP_LTC + '/main'
+                ? process.env.REACT_APP_LTC + 'main'
                 : '/main'
             }
             element={
@@ -53,7 +51,7 @@ export const Routing: React.FC = () => {
           <Route
             path={
               process.env.REACT_APP_LTC
-                ? process.env.REACT_APP_LTC + '/survey'
+                ? process.env.REACT_APP_LTC + 'survey'
                 : '/survey'
             }
             element={
@@ -65,7 +63,7 @@ export const Routing: React.FC = () => {
           <Route
             path={
               process.env.REACT_APP_LTC
-                ? process.env.REACT_APP_LTC + '/recomended-activities'
+                ? process.env.REACT_APP_LTC + 'recomended-activities'
                 : '/recomended-activities'
             }
             element={
@@ -77,7 +75,7 @@ export const Routing: React.FC = () => {
           <Route
             path={
               process.env.REACT_APP_LTC
-                ? process.env.REACT_APP_LTC + '/search-activities'
+                ? process.env.REACT_APP_LTC + 'search-activities'
                 : '/search-activities'
             }
             element={

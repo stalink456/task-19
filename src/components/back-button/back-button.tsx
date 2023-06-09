@@ -8,7 +8,7 @@ export const BackButton: React.FC = React.memo(() => {
       <Link
         to={
           process.env.REACT_APP_LTC
-            ? process.env.REACT_APP_LTC + '/main'
+            ? process.env.REACT_APP_LTC + 'main'
             : '/main'
         }
       >

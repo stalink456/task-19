@@ -20,7 +20,7 @@ export const SearchActivitiesDescription: React.FC = React.memo(() => {
         <Link
           to={
             process.env.REACT_APP_LTC
-              ? process.env.REACT_APP_LTC + `/search-activities`
+              ? process.env.REACT_APP_LTC + 'search-activities'
               : `/search-activities`
           }
         >

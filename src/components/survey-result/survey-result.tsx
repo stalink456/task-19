@@ -20,7 +20,7 @@ export const SurveyResult: React.FC = React.memo(() => {
       <Link
         to={
           process.env.REACT_APP_LTC
-            ? process.env.REACT_APP_LTC + '/main'
+            ? process.env.REACT_APP_LTC + 'main'
             : '/main'
         }
         className={styles.survey_card__container__submit_button}

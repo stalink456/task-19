@@ -22,7 +22,7 @@ export const RecomendedCardActivities: React.FC<RecomendedActivity> =
                 to={
                   process.env.REACT_APP_LTC
                     ? process.env.REACT_APP_LTC +
-                      `/recomended-activities?d3LevelId=${d3LevelId}`
+                      `recomended-activities?d3LevelId=${d3LevelId}`
                     : `/recomended-activities?d3LevelId=${d3LevelId}`
                 }
                 style={{ marginBottom: '20px' }}
