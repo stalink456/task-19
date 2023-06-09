@@ -15,7 +15,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'build'),
     filename: '[name].[hash].js',
-    publicPath: '/',
+    publicPath: '/ltc/',
   },
   plugins: [
     new HTMLWebpackPlugin({
@@ -31,7 +31,9 @@ module.exports = {
     }),
   ],
   devServer: {
-    historyApiFallback: true,
+    historyApiFallback: {
+      index: '/ltc/',
+    },
     watchFiles: ['./public/*'],
     port: 3005,
     open: true,

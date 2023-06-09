@@ -23,7 +23,7 @@ export const useAuth = () => {
 
   React.useEffect(() => {
     if (userId) {
-      navigate('/main');
+      navigate('/ltc/main');
     }
   }, [userId]);
 

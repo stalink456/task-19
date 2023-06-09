@@ -17,7 +17,10 @@ export const SurveyResult: React.FC = React.memo(() => {
         точными
       </Typography.Title>
 
-      <Link to='/main' className={styles.survey_card__container__submit_button}>
+      <Link
+        to='/ltc/main'
+        className={styles.survey_card__container__submit_button}
+      >
         <Button style={{ height: '2.5em' }}>Перейти на главную страницу</Button>
       </Link>
     </div>

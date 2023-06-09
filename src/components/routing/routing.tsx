@@ -32,9 +32,9 @@ export const Routing: React.FC = () => {
       <Router>
         <ExitButton />
         <Routes>
-          <Route path='/' element={<Auth />} />
+          <Route path='/ltc/' element={<Auth />} />
           <Route
-            path='/main'
+            path='/ltc/main'
             element={
               <Suspense fallback={<Loading />}>
                 <Main />
@@ -42,7 +42,7 @@ export const Routing: React.FC = () => {
             }
           />
           <Route
-            path='/survey'
+            path='/ltc/survey'
             element={
               <Suspense fallback={<Loading />}>
                 <Survey />
@@ -50,7 +50,7 @@ export const Routing: React.FC = () => {
             }
           />
           <Route
-            path='/recomended-activities'
+            path='/ltc/recomended-activities'
             element={
               <Suspense fallback={<Loading />}>
                 <RecomendedActivities />
@@ -58,7 +58,7 @@ export const Routing: React.FC = () => {
             }
           />
           <Route
-            path='/search-activities'
+            path='/ltc/search-activities'
             element={
               <Suspense fallback={<Loading />}>
                 <SearchActivities />
