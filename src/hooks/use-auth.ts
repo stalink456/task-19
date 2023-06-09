@@ -22,8 +22,12 @@ export const useAuth = () => {
   const navigate = useNavigate();
 
   React.useEffect(() => {
+    const path = process.env.REACT_APP_LTC
+      ? process.env.REACT_APP_LTC + '/main'
+      : '/main';
+
     if (userId) {
-      navigate('/ltc/main');
+      navigate(path);
     }
   }, [userId]);
 

@@ -17,7 +17,13 @@ export const SearchActivitiesDescription: React.FC = React.memo(() => {
         <Typography.Text className={styles.activities__description__text}>
           Пройдите опрос и узнайте, какие направления подходят именно Вам.
         </Typography.Text>
-        <Link to='/ltc/search-activities'>
+        <Link
+          to={
+            process.env.REACT_APP_LTC
+              ? process.env.REACT_APP_LTC + `/search-activities`
+              : `/search-activities`
+          }
+        >
           <Button type='primary' block style={{ height: '2.5em' }}>
             Выбрать занятие
           </Button>

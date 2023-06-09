@@ -15,7 +15,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'build'),
     filename: '[name].[hash].js',
-    publicPath: '/ltc/',
+    publicPath: `${process.env.REACT_APP_LTC ?? '/'}`,
   },
   plugins: [
     new HTMLWebpackPlugin({
@@ -32,7 +32,7 @@ module.exports = {
   ],
   devServer: {
     historyApiFallback: {
-      index: '/ltc/',
+      index: `${process.env.REACT_APP_LTC ?? '/'}`,
     },
     watchFiles: ['./public/*'],
     port: 3005,

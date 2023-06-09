@@ -32,9 +32,18 @@ export const Routing: React.FC = () => {
       <Router>
         <ExitButton />
         <Routes>
-          <Route path='/ltc/' element={<Auth />} />
           <Route
-            path='/ltc/main'
+            path={
+              process.env.REACT_APP_LTC ? process.env.REACT_APP_LTC + '/' : '/'
+            }
+            element={<Auth />}
+          />
+          <Route
+            path={
+              process.env.REACT_APP_LTC
+                ? process.env.REACT_APP_LTC + '/main'
+                : '/main'
+            }
             element={
               <Suspense fallback={<Loading />}>
                 <Main />
@@ -42,7 +51,11 @@ export const Routing: React.FC = () => {
             }
           />
           <Route
-            path='/ltc/survey'
+            path={
+              process.env.REACT_APP_LTC
+                ? process.env.REACT_APP_LTC + '/survey'
+                : '/survey'
+            }
             element={
               <Suspense fallback={<Loading />}>
                 <Survey />
@@ -50,7 +63,11 @@ export const Routing: React.FC = () => {
             }
           />
           <Route
-            path='/ltc/recomended-activities'
+            path={
+              process.env.REACT_APP_LTC
+                ? process.env.REACT_APP_LTC + '/recomended-activities'
+                : '/recomended-activities'
+            }
             element={
               <Suspense fallback={<Loading />}>
                 <RecomendedActivities />
@@ -58,7 +75,11 @@ export const Routing: React.FC = () => {
             }
           />
           <Route
-            path='/ltc/search-activities'
+            path={
+              process.env.REACT_APP_LTC
+                ? process.env.REACT_APP_LTC + '/search-activities'
+                : '/search-activities'
+            }
             element={
               <Suspense fallback={<Loading />}>
                 <SearchActivities />

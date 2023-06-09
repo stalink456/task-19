@@ -9,9 +9,12 @@ export const useExitButton = () => {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
   const userId = useAppSelector(authUserIdSelector);
+  const path = process.env.REACT_APP_LTC
+    ? process.env.REACT_APP_LTC + '/'
+    : '/';
 
   React.useEffect(() => {
-    if (location.pathname !== '/ltc/') {
+    if (location.pathname !== path) {
       setShowButton(true);
     } else {
       setShowButton(false);
@@ -20,14 +23,14 @@ export const useExitButton = () => {
 
   React.useEffect(() => {
     if (userId === null) {
-      navigate('/ltc/');
+      navigate(path);
     }
   }, [userId]);
 
   const handleExitButton = () => {
     if (window.confirm('Вы действительно хотите выйти из приложения?')) {
       dispatch(authActions.removeUsersData());
-      navigate('/ltc/');
+      navigate(path);
       window.location.reload();
     }
   };
