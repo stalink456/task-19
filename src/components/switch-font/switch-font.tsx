@@ -24,7 +24,7 @@ export const SwitchFont: React.FC = React.memo(() => {
           type='primary'
           size='large'
           onClick={handleFontSizeChange}
-          style={{ height: '3em' }}
+          style={{ height: '3em', width: '3em' }}
         >
           <SearchOutlined />
         </Button>
