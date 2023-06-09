@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Checkbox, Input, Radio, Space, Typography } from 'antd';
+import { AutoComplete, Button, Checkbox, Radio, Space, Typography } from 'antd';
 import { BackButton } from 'components/back-button';
 import { useSurveyCard } from 'hooks/use-survey-card';
 
@@ -13,11 +13,13 @@ export const SurveyCard: React.FC = () => {
     question,
     answer,
     type,
+    address,
 
     onChangeRadioQuestion,
     onChangeCheckboxQuestion,
     onChangeInputQuestion,
     handleQuestionSurvey,
+    onSelectAddress,
   } = useSurveyCard();
 
   const renderRadio = () => {
@@ -49,9 +51,12 @@ export const SurveyCard: React.FC = () => {
   const renderInput = () => {
     return type === 'input' ? (
       <Space direction='vertical' style={{ width: '100%' }}>
-        <Input
+        <AutoComplete
+          style={{ width: '23em' }}
+          options={address}
           placeholder={answer[0]['value']}
           onChange={onChangeInputQuestion}
+          onSelect={onSelectAddress}
         />
       </Space>
     ) : null;

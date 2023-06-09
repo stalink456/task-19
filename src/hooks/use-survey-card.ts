@@ -12,7 +12,8 @@ import {
 import { CheckboxValueType } from 'antd/es/checkbox/Group';
 import { authUserIdSelector } from 'store/auth';
 import { surveyPostAnswerActions } from 'store/survey-post';
-import { addressItemsSelector } from 'store/address';
+import { addressActions, addressItemsSelector } from 'store/address';
+import debounce from 'lodash.debounce';
 
 export const useSurveyCard = () => {
   const dispatch = useAppDispatch();
@@ -42,15 +43,32 @@ export const useSurveyCard = () => {
     );
   };
 
-  const onChangeInputQuestion = (
-    event: React.ChangeEvent<HTMLInputElement>
-  ) => {
+  const updateSearchValue = React.useCallback(
+    debounce((str: string) => {
+      dispatch(addressActions.request(str));
+    }, 250),
+    []
+  );
+
+  const onChangeInputQuestion = (data: string) => {
     setAnswersUser(
       (prev) =>
         ({
           ...prev,
           questionKey: id,
-          answer: event.target.value,
+          answer: data,
+        } as AnswersType)
+    );
+    updateSearchValue(data);
+  };
+
+  const onSelectAddress = (data: string) => {
+    setAnswersUser(
+      (prev) =>
+        ({
+          ...prev,
+          questionKey: id,
+          answer: data,
         } as AnswersType)
     );
   };
@@ -86,5 +104,6 @@ export const useSurveyCard = () => {
     onChangeCheckboxQuestion,
     onChangeInputQuestion,
     handleQuestionSurvey,
+    onSelectAddress,
   };
 };

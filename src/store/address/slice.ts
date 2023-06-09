@@ -1,5 +1,5 @@
 import { CaseReducer, createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { AdressInitialStateType } from './types';
+import { AdressInitialStateType, OptionsType } from './types';
 
 const initialState: AdressInitialStateType = {
   address: [],
@@ -13,10 +13,10 @@ const request: CaseReducer<AdressInitialStateType, PayloadAction<string>> = (
   state.address = [];
 };
 
-const success: CaseReducer<AdressInitialStateType, PayloadAction<string[]>> = (
-  state,
-  { payload }
-) => {
+const success: CaseReducer<
+  AdressInitialStateType,
+  PayloadAction<OptionsType[]>
+> = (state, { payload }) => {
   state.address = [...payload];
 };
 

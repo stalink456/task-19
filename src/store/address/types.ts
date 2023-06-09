@@ -1,3 +1,7 @@
+export type OptionsType = {
+  value: string;
+};
+
 export type AdressInitialStateType = {
-  address: string[];
+  address: OptionsType[];
 };
