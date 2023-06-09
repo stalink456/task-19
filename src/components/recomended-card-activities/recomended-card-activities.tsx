@@ -19,7 +19,7 @@ export const RecomendedCardActivities: React.FC<RecomendedActivity> =
               className={styles.recomended_card_activities__description_text}
             >
               <Link
-                to={`/recomended-activities?d3LevelId=${d3LevelId}`}
+                to={`/ltc/recomended-activities?d3LevelId=${d3LevelId}`}
                 style={{ marginBottom: '20px' }}
               >
                 {title}
