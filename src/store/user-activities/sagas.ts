@@ -21,7 +21,6 @@ function* userActivitiesSaga(props: PayloadAction<UserActivitiesPostType>) {
     );
   } catch (e) {
     yield put(userActivitiesActions.failure());
-    // нет времени разбираться, но активности добавляются (будет особенностью системы), в следующем спринте поправим
     yield put(
       notificationsActions.notifications({
         notifications: {

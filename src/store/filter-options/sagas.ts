@@ -1,21 +1,21 @@
 import { all, call, put, takeLatest } from 'redux-saga/effects';
 import { notificationsActions } from '../notifications';
 import { filterOptionsActions } from './slice';
-import { FilterValues } from './types';
+import { FilterOptionsType } from './types';
 import { getFilterOptions } from 'api/filter-options/get-filter-options';
 
 function* filterOptionsSaga() {
   try {
     const [
-      district,
-      days,
-      online,
-      d0LevelId,
-      d1LevelId,
-      d2LevelId,
-      certificate,
-      area,
-    ]: FilterValues[][] = yield all([
+      districtRes,
+      daysRes,
+      onlineRes,
+      d0LevelIdRes,
+      d1LevelIdRes,
+      d2LevelIdRes,
+      certificateRes,
+      areaRes,
+    ]: FilterOptionsType[] = yield all([
       call(getFilterOptions, 'district'),
       call(getFilterOptions, 'days'),
       call(getFilterOptions, 'online'),
@@ -25,6 +25,15 @@ function* filterOptionsSaga() {
       call(getFilterOptions, 'certificate'),
       call(getFilterOptions, 'area'),
     ]);
+
+    const { district } = districtRes;
+    const { days } = daysRes;
+    const { online } = onlineRes;
+    const { d0LevelId } = d0LevelIdRes;
+    const { d1LevelId } = d1LevelIdRes;
+    const { d2LevelId } = d2LevelIdRes;
+    const { certificate } = certificateRes;
+    const { area } = areaRes;
 
     yield put(
       filterOptionsActions.success({

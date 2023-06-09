@@ -37,14 +37,14 @@ const success: CaseReducer<
     },
   }
 ) => {
-  state.district = district['district'];
-  state.days = days['days'];
-  state.online = online['online'];
-  state.d0LevelId = d0LevelId['d0LevelId'];
-  state.d1LevelId = d1LevelId['d1LevelId'];
-  state.d2LevelId = d2LevelId['d2LevelId'];
-  state.certificate = certificate['certificate'];
-  state.area = area['area'];
+  state.district = [...district];
+  state.days = [...days];
+  state.online = [...online];
+  state.d0LevelId = [...d0LevelId];
+  state.d1LevelId = [...d1LevelId];
+  state.d2LevelId = [...d2LevelId];
+  state.certificate = [...certificate];
+  state.area = [...area];
 
   state.isLoading = false;
 };

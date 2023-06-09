@@ -98,7 +98,7 @@ export const useSurveyCard = () => {
     type,
     question,
     currentQuestion,
-    address, // доделать debounce
+    address,
 
     onChangeRadioQuestion,
     onChangeCheckboxQuestion,

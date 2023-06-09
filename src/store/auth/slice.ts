@@ -2,7 +2,7 @@ import { CaseReducer, createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { AuthTypeInitialStateType, UserData } from './types';
 
 const initialState: AuthTypeInitialStateType = {
-  userId: null, // поставить null! '101391104'
+  userId: null,
   fio: null,
   date: null,
   sex: null,
