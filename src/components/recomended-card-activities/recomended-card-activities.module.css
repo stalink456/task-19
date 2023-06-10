@@ -3,19 +3,33 @@
 
 .recomended_card_activities {
   flex: 1 1 31%;
-  padding: 20px;
-
   box-shadow: var(--shadow-params);
   border-radius: 15px;
   align-self: stretch;
-
   position: relative;
   composes: opacity from global;
 }
 
+.recomended_card_activities__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-radius: 24px 24px 0px 0px;
+}
+
+.recomended_card_activities__header svg {
+  height: 4em;
+}
+
+.recomended_card_activities__container {
+  padding: 20px;
+}
+
 .recomended_card_activities h3 {
   margin: 10px 0;
-  font-size: 1.125em;
+  color: #fff;
+  font-size: 1.125em !important;
 }
 
 .recomended_card_activities__description_text {
@@ -45,5 +59,6 @@
   .recomended_card_activities__description {
     display: flex;
     flex-direction: column;
+    padding: 20px 20px;
   }
 }

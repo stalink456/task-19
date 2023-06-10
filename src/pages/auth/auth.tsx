@@ -19,13 +19,25 @@ export const Auth: React.FC = () => {
   return (
     <div className={styles.auth}>
       <Space direction='vertical' className={styles.auth_default_buttons}>
-        <Button type='primary' onClick={handleChangeUser1}>
+        <Button
+          type='primary'
+          onClick={handleChangeUser1}
+          style={{ height: '2.5em' }}
+        >
           User1
         </Button>
-        <Button type='primary' onClick={handleChangeUser2}>
+        <Button
+          type='primary'
+          onClick={handleChangeUser2}
+          style={{ height: '2.5em' }}
+        >
           User2
         </Button>
-        <Button type='primary' onClick={handleChangeUser3}>
+        <Button
+          type='primary'
+          onClick={handleChangeUser3}
+          style={{ height: '2.5em' }}
+        >
           User3
         </Button>
       </Space>

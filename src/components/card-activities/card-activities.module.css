@@ -2,10 +2,8 @@
 @import '../../css/variables.css';
 
 .card_activities {
-  /* width: 285px; */
   width: 17.9em;
-  /* height: 230px; */
-  height: 13em;
+  height: 14.5em;
   padding: 35px;
   box-shadow: -6px 6px 20px rgba(0, 0, 0, 0.1);
   border-radius: 15px;
