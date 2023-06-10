@@ -9,7 +9,7 @@ export const getPersonalActivities = async (
   const { id, userId } = props;
   const { data } = await HttpClient.call(
     Method.Post,
-    `${process.env.REACT_APP_BASE_URL}/search?d3LevelId=${id}&userId=${userId}`
+    `${process.env.REACT_APP_BASE_URL}/search?d3LevelId=${id}&userId=${userId}&active=1`
   );
 
   return data;

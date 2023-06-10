@@ -24,21 +24,21 @@ export const Auth: React.FC = () => {
           onClick={handleChangeUser1}
           style={{ height: '2.5em' }}
         >
-          User1
+          Тестовый пользователь №1
         </Button>
         <Button
           type='primary'
           onClick={handleChangeUser2}
           style={{ height: '2.5em' }}
         >
-          User2
+          Тестовый пользователь №2
         </Button>
         <Button
           type='primary'
           onClick={handleChangeUser3}
           style={{ height: '2.5em' }}
         >
-          User3
+          Тестовый пользователь №3
         </Button>
       </Space>
       <Form

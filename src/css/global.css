@@ -25,3 +25,17 @@ body {
   font-size: 16px;
   /* font-size: 24px; */
 }
+
+.chip {
+  position: relative;
+  top: -1px;
+  padding: 3px 6px;
+  border-radius: 6px;
+  border: 0px solid rgba(244, 10, 10, 0.75);
+  background-color: rgb(186 9 9 / 75%);
+  color: #fff;
+  margin: 0 3px;
+  -webkit-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+  -moz-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+  box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+}

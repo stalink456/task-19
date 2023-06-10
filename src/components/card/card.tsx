@@ -7,6 +7,7 @@ import { useCard } from 'hooks/use-card';
 import { disabledDate } from 'utils/disabledDate';
 
 import styles from './card.module.css';
+import { ClockCircleOutlined } from '@ant-design/icons';
 
 export const Card: React.FC<ActivitiesType> = React.memo((props) => {
   const {
@@ -18,7 +19,7 @@ export const Card: React.FC<ActivitiesType> = React.memo((props) => {
     groupId,
     dateFinished,
     dateStarted,
-    scheduleClosed,
+    schedule,
   } = props;
 
   const {
@@ -87,8 +88,21 @@ export const Card: React.FC<ActivitiesType> = React.memo((props) => {
             Адрес: {address}, {area}, {district}
           </Typography.Text>
           <Typography.Text type='secondary'>Группа: {groupId}</Typography.Text>
-          <Typography.Text type='secondary'>
-            Время работы: {scheduleClosed}
+          <Typography.Text
+            type='secondary'
+            style={{ display: 'flex', flexWrap: 'wrap' }}
+          >
+            Расписание занятий:
+            {schedule.map(({ day, timeStart }, index) => (
+              <div key={index} className='chip'>
+                {' '}
+                {day} {timeStart.split(':').slice(0, -1).join(':')}
+              </div>
+            ))}{' '}
+            <ClockCircleOutlined
+              style={{ color: '#1677ff', margin: '0px 4px' }}
+            />{' '}
+            {'~ 1 час'}
           </Typography.Text>
         </Space>
         <Button type='primary' onClick={showModal} style={{ height: '2.5em' }}>
