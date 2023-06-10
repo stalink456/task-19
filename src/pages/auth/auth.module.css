@@ -25,6 +25,11 @@
   justify-content: center;
 }
 
+.auth_default_buttons {
+  position: absolute;
+  left: 40px;
+}
+
 .auth__form label {
   font-size: 1em !important;
 }

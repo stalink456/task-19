@@ -1,18 +1,38 @@
 import React from 'react';
-import { Button, Form, Input, Radio } from 'antd';
+import { Button, Form, Input, Radio, Space } from 'antd';
 import { useAuth } from 'hooks/use-auth';
 
 import styles from './auth.module.css';
 
 export const Auth: React.FC = () => {
-  const { authFIO, authDate, authIsLoading, onFinish } = useAuth();
+  const [form] = Form.useForm();
+  const {
+    authFIO,
+    authDate,
+    authIsLoading,
+    onFinish,
+    handleChangeUser1,
+    handleChangeUser2,
+    handleChangeUser3,
+  } = useAuth(form);
 
   return (
     <div className={styles.auth}>
+      <Space direction='vertical' className={styles.auth_default_buttons}>
+        <Button type='primary' onClick={handleChangeUser1}>
+          User1
+        </Button>
+        <Button type='primary' onClick={handleChangeUser2}>
+          User2
+        </Button>
+        <Button type='primary' onClick={handleChangeUser3}>
+          User3
+        </Button>
+      </Space>
       <Form
         className={styles.auth__form}
         name='auth'
-        initialValues={{ remember: true }}
+        form={form}
         onFinish={onFinish}
         autoComplete='off'
       >
